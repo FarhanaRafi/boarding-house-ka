@@ -17,21 +17,11 @@ export default function About() {
             <div className="relative rounded-xl md:rounded-2xl overflow-hidden shadow-xl md:shadow-2xl">
               <img
                 src="/images/32173466.JPG"
-                alt="Wohnheim Gatermann Außenansicht"
+                alt="livein-wg.de"
                 className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
             {/* Stats overlay */}
-            <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-gradient-to-br from-orange-500 to-orange-600 text-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105">
-              <div className="text-center">
-                <div className="text-2xl md:text-4xl font-bold mb-1">
-                  {t.about.newBuilding}
-                </div>
-                <div className="text-xs md:text-sm opacity-90">
-                  {t.about.modernComfortable}
-                </div>
-              </div>
-            </div>
           </AnimateOnScroll>
 
           {/* Content */}

@@ -16,7 +16,7 @@ const allImages = [
   {
     src: "/images/32173466.JPG",
     alt: "Wohnheim Gebäude",
-    description: "Das moderne Wohnheim Gatermann",
+    description: "Boarding House by livein-wg.de",
     showInGrid: true,
   },
   {

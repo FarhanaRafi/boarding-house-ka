@@ -22,19 +22,19 @@ export default function Map() {
           </p>
         </AnimateOnScroll>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 items-stretch">
           {/* Address Card */}
           <AnimateOnScroll animation="fade-right" delay={100} duration={700}>
-            <div className="bg-white rounded-xl md:rounded-2xl p-5 md:p-8 shadow-lg h-full">
-              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4 md:mb-6">
-                {t.map.location}
-              </h3>
+            <div className="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg h-full flex flex-col justify-center">
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-6">
+                  {t.map.location}
+                </h3>
 
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-9 h-9 md:w-10 md:h-10 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center flex-shrink-0">
                     <svg
-                      className="w-4 h-4 md:w-5 md:h-5 text-orange-500"
+                      className="w-6 h-6 text-orange-500"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -54,56 +54,28 @@ export default function Map() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 text-sm md:text-base">
+                    <h4 className="font-bold text-gray-900 text-lg mb-1">
                       {t.map.wohnheimAddress}
                     </h4>
-                    <p className="text-gray-600 text-sm md:text-base">
+                    <p className="text-gray-600 text-base leading-relaxed">
                       Pfarrer-Graebener-Straße 1A
                       <br />
                       76149 Karlsruhe-Neureut
                     </p>
                   </div>
                 </div>
-
-                <div className="flex items-start space-x-3">
-                  <div className="w-9 h-9 md:w-10 md:h-10 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <svg
-                      className="w-4 h-4 md:w-5 md:h-5 text-orange-500"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 text-sm md:text-base">
-                      {t.map.officeAddress}
-                    </h4>
-                    <p className="text-gray-600 text-sm md:text-base">
-                      Roennebergstr. 17
-                      <br />
-                      12161 Berlin
-                    </p>
-                  </div>
-                </div>
               </div>
 
-              <div className="mt-6 md:mt-8 pt-4 md:pt-6 border-t border-gray-100">
+              <div className="mt-8 pt-6 border-t border-gray-100">
                 <a
-                  href="https://maps.google.com/maps?q=Pfarrer-Graebener-Stra%C3%9Fe%201A%2C%2076149%20Karlsruhe"
+                  href="https://www.google.com/maps/search/?api=1&query=Pfarrer-Graebener-Straße+1A+76149+Karlsruhe"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold transition-colors duration-300 text-sm md:text-base"
+                  className="inline-flex items-center text-orange-500 hover:text-orange-600 font-bold tracking-wide transition-colors duration-300"
                 >
                   {t.map.openMaps}
                   <svg
-                    className="w-4 h-4 ml-2"
+                    className="w-5 h-5 ml-2"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -127,10 +99,10 @@ export default function Map() {
             duration={700}
             className="lg:col-span-2"
           >
-            <div className="rounded-xl md:rounded-2xl overflow-hidden shadow-lg h-[300px] sm:h-[350px] md:h-[400px] lg:h-auto lg:min-h-[400px]">
+            <div className="rounded-xl md:rounded-2xl overflow-hidden shadow-lg h-[300px] sm:h-[350px] md:h-[400px] lg:h-full lg:min-h-[400px]">
               <iframe
-                title="Wohnheim Gatermann Standort"
-                src="https://maps.google.com/maps?z=14&ll=49.04994,8.381650000000036&q=Pfarrer-Graebener-Stra%C3%9Fe%201A%2C%2076149%20Karlsruhe%2C%20Deutschland&iwloc=near&f=q&source=s_q&hl=de&ie=UTF8&output=embed"
+                title="Boardinghouse Karlsruhe - livein-wg.de"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2616.467825368366!2d8.38459427685955!3d49.02073997135439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797089457635c03%3A0x6758604771485671!2sPfarrer-Graebener-Stra%C3%9Fe%201A%2C%2076149%20Karlsruhe!5e0!3m2!1sen!2sde!4v1709400000000!5m2!1sen!2sde"
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: "300px" }}

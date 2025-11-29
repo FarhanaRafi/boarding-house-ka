@@ -30,7 +30,7 @@ export default function Contact() {
           {/* Phone */}
           <AnimateOnScroll animation="fade-up" delay={100} duration={600}>
             <a
-              href="tel:+4915208684401"
+              href="tel:+4915738754711"
               className="group block bg-gray-50 hover:bg-orange-500 rounded-2xl p-6 md:p-8 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full"
             >
               <div className="w-14 h-14 md:w-16 md:h-16 bg-orange-100 group-hover:bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4 transition-all duration-300">
@@ -52,7 +52,7 @@ export default function Contact() {
                 {t.contact.phone}
               </h4>
               <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-300">
-                015208684401
+                015738754711
               </p>
             </a>
           </AnimateOnScroll>
@@ -60,7 +60,7 @@ export default function Contact() {
           {/* Email */}
           <AnimateOnScroll animation="fade-up" delay={200} duration={600}>
             <a
-              href="mailto:info@wohnheimgatermann.de"
+              href="mailto:info@boardinghousekarlsruhe.de"
               className="group block bg-gray-50 hover:bg-orange-500 rounded-2xl p-6 md:p-8 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full"
             >
               <div className="w-14 h-14 md:w-16 md:h-16 bg-orange-100 group-hover:bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4 transition-all duration-300">
@@ -82,7 +82,7 @@ export default function Contact() {
                 {t.contact.email}
               </h4>
               <p className="text-gray-600 group-hover:text-white/90 text-sm md:text-base transition-colors duration-300 break-all">
-                info@wohnheimgatermann.de
+                info@boardinghousekarlsruhe.de
               </p>
             </a>
           </AnimateOnScroll>

@@ -20,7 +20,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <img
           src="/images/32162656.JPG"
-          alt="Boardinghouse Karlsruhe - Wohnheim Gatermann"
+          alt="Boardinghouse Karlsruhe - livein-wg.de"
           className={`w-full h-full object-cover transition-transform duration-[2000ms] ${
             isLoaded ? "scale-100" : "scale-110"
           }`}
