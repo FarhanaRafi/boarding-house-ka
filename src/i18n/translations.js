@@ -104,7 +104,7 @@ export const translations = {
       largeDesc:
         "Größeres Apartment mit zwei Ebenen und einem Duschbad, sowie einem separaten WC.",
       inquire: "Anfragen",
-      persons12: "1-2 Personen",
+      persons12: "1-2 Personen ",
       persons2plus: "2+ Personen",
       shower: "Duschbad",
       showerWC: "Duschbad + WC",
