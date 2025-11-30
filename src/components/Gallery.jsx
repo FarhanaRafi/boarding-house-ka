@@ -2,110 +2,93 @@ import { useState } from "react";
 import { useLanguage } from "../i18n";
 import { AnimateOnScroll } from "../hooks/useScrollAnimation";
 
-// All images for the slideshow - showInGrid marks which ones appear in the default grid
-const allImages = [
-  // Hero banner image first
+const getImageData = (t) => [
   {
     src: "/images/32162656.JPG",
-    alt: "Wohnheim Außenansicht",
-    description:
-      "Außenansicht des Wohnheims - unser modernes Boardinghouse in Karlsruhe-Neureut",
+    alt: t.gallery.img_32162656_alt,
+    description: t.gallery.img_32162656_desc,
     showInGrid: true,
   },
-  // Other high resolution images (shown in grid)
   {
     src: "/images/32173466.JPG",
-    alt: "Wohnheim Gebäude",
-    description: "Boarding House by livein-wg.de",
+    alt: t.gallery.img_32173466_alt,
+    description: t.gallery.img_32173466_desc,
     showInGrid: true,
   },
   {
     src: "/images/32173469.JPG",
-    alt: "Wohnheim Eingang",
-    description: "Eingangsbereich des Wohnheims",
+    alt: t.gallery.img_32173469_alt,
+    description: t.gallery.img_32173469_desc,
     showInGrid: true,
   },
   {
     src: "/images/32173834.JPG",
-    alt: "Apartment Innenansicht",
-    description: "Modernes Apartment mit viel Licht",
-    showInGrid: false,
-  },
-  // Additional images (only in slideshow)
-  {
-    src: "/images/32162682.JPG",
-    alt: "Apartment 21 Arbeitsbereich",
-    description: "Apartment 21 - Arbeitsbereich",
-    showInGrid: false,
-  },
-  {
-    src: "/images/32162687.JPG",
-    alt: "Apartment 21 Übersicht",
-    description: "Apartment 21 Gesamtansicht",
+    alt: t.gallery.img_32173834_alt,
+    description: t.gallery.img_32173834_desc,
     showInGrid: false,
   },
   {
     src: "/images/32162735.JPG",
-    alt: "Apartment 21 Wohnbereich",
-    description: "Apartment 21 Wohnbereich",
+    alt: t.gallery.img_32162735_alt,
+    description: t.gallery.img_32162735_desc,
     showInGrid: false,
   },
   {
     src: "/images/32162754.JPG",
-    alt: "Duschbad Apartment 21",
-    description: "Duschbad in Apartment 21 (kleines Apartment)",
+    alt: t.gallery.img_32162754_alt,
+    description: t.gallery.img_32162754_desc,
     showInGrid: false,
   },
   {
     src: "/images/32162778.JPG",
-    alt: "Apartment 25 Eingang",
-    description: "Apartment 25 (größeres Apartment mit zwei Ebenen)",
+    alt: t.gallery.img_32162778_alt,
+    description: t.gallery.img_32162778_desc,
     showInGrid: false,
   },
   {
     src: "/images/32162786.JPG",
-    alt: "Apartment 25 Arbeitsplatz",
-    description: "Eingang Apartment 25 mit Arbeitsplatz und Schrank",
+    alt: t.gallery.img_32162786_alt,
+    description: t.gallery.img_32162786_desc,
     showInGrid: false,
   },
   {
     src: "/images/32162794.JPG",
-    alt: "Apartment 25 obere Ebene",
-    description: "Obere Ebene Apartment 25",
+    alt: t.gallery.img_32162794_alt,
+    description: t.gallery.img_32162794_desc,
     showInGrid: false,
   },
   {
     src: "/images/32174044.JPG",
-    alt: "Schlafbereich Apartment 25",
-    description: "Schlafbereich obere Ebene Apartment 25",
+    alt: t.gallery.img_32174044_alt,
+    description: t.gallery.img_32174044_desc,
     showInGrid: false,
   },
   {
     src: "/images/32162840.JPG",
-    alt: "WC Apartment 25",
-    description: "Oberes WC Apartment 25",
+    alt: t.gallery.img_32162840_alt,
+    description: t.gallery.img_32162840_desc,
     showInGrid: false,
   },
   {
     src: "/images/32162845.JPG",
-    alt: "Wohnbereich Apartment 25",
-    description: "Wohnbereich mit zusätzlicher Schlafcouch",
+    alt: t.gallery.img_32162845_alt,
+    description: t.gallery.img_32162845_desc,
     showInGrid: true,
   },
   {
     src: "/images/32174059.JPG",
-    alt: "Größeres Apartment",
-    description: "Größere Apartments ab 1000 Euro pro Monat",
+    alt: t.gallery.img_32174059_alt,
+    description: t.gallery.img_32174059_desc,
     showInGrid: false,
   },
 ];
 
-// Images shown in the grid (high resolution only)
-const gridImages = allImages.filter((img) => img.showInGrid);
-
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null);
   const { t } = useLanguage();
+
+  const allImages = getImageData(t);
+  const gridImages = allImages.filter((img) => img.showInGrid);
 
   const openLightbox = (image) => {
     setSelectedImage(image);

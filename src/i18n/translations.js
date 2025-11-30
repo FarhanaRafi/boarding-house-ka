@@ -72,6 +72,7 @@ export const translations = {
       title: "Bei uns ist der Gast König",
       description:
         "Deshalb liegt es uns sehr am Herzen, eine freundliche und entspannende Atmosphäre zu schaffen. Unser Haus ist neu und ansprechend und jedes Apartment verfügt über modernes Mobiliar.",
+      disclaimer: "Dienstleistungen unterliegen Bedingungen und Verfügbarkeit.",
       cleaning: "Wöchentlicher Reinigungsservice",
       cleaningDesc:
         "Einmal wöchentlich bieten wir einen Reinigungsservice der Gemeinschaftsräume.",
@@ -119,6 +120,35 @@ export const translations = {
       title: "Einblicke in unsere Apartments",
       description:
         "Überzeugen Sie sich selbst von der Qualität unserer Unterkünfte. Klicken Sie auf ein Bild für mehr Details.",
+      // Image specific texts
+      img_32162656_alt: "Wohnheim Außenansicht",
+      img_32162656_desc:
+        "Außenansicht des Wohnheims - unser modernes Boardinghouse in Karlsruhe-Neureut.",
+      img_32173466_alt: "Wohnheim Gebäude",
+      img_32173466_desc: "Boarding House by livein-wg.de.",
+      img_32173469_alt: "Gemeinschaftsküche",
+      img_32173469_desc:
+        "Moderne und voll ausgestattete Gemeinschaftsküche für alle Bewohner.",
+      img_32173834_alt: "Apartment-Telefon",
+      img_32173834_desc: "Telefon verfügbar.",
+      img_32162735_alt: "Apartment 21 Wohnbereich",
+      img_32162735_desc: "Apartment 21 Wohnbereich.",
+      img_32162754_alt: "Duschbad Apartment 21",
+      img_32162754_desc: "Duschbad in Apartment 21 (kleines Apartment).",
+      img_32162778_alt: "Apartment 25 Eingang",
+      img_32162778_desc: "Apartment 25 (größeres Apartment mit zwei Ebenen).",
+      img_32162786_alt: "Apartment 25 Arbeitsplatz",
+      img_32162786_desc: "Eingang Apartment 25 mit Arbeitsplatz und Schrank.",
+      img_32162794_alt: "Apartment 25 obere Ebene",
+      img_32162794_desc: "Obere Ebene Apartment 25.",
+      img_32174044_alt: "Schlafbereich Apartment 25",
+      img_32174044_desc: "Schlafbereich obere Ebene Apartment 25.",
+      img_32162840_alt: "WC Apartment 25",
+      img_32162840_desc: "Oberes WC Apartment 25.",
+      img_32162845_alt: "Wohnbereich Apartment 25",
+      img_32162845_desc: "Wohnbereich mit zusätzlicher Schlafcouch.",
+      img_32174059_alt: "Größeres Apartment",
+      img_32174059_desc: "Größeres Apartment mit viel Platz.",
     },
     // Map/Directions Section
     map: {
@@ -230,6 +260,7 @@ export const translations = {
       title: "The Guest is King",
       description:
         "That's why it's very important to us to create a friendly and relaxing atmosphere. Our building is new and appealing, and every apartment features modern furniture.",
+      disclaimer: "Services are subject to conditions and availability.",
       cleaning: "Weekly Cleaning Service",
       cleaningDesc:
         "Once a week we offer a cleaning service for the common areas.",
@@ -277,6 +308,35 @@ export const translations = {
       title: "Insights into our Apartments",
       description:
         "See for yourself the quality of our accommodations. Click on an image for more details.",
+      // Image specific texts
+      img_32162656_alt: "Residence Exterior View",
+      img_32162656_desc:
+        "Exterior view of the residence - our modern boarding house in Karlsruhe-Neureut.",
+      img_32173466_alt: "Residence Building",
+      img_32173466_desc: "Boarding House by livein-wg.de.",
+      img_32173469_alt: "Common Kitchen",
+      img_32173469_desc:
+        "Modern and fully equipped common kitchen for all residents.",
+      img_32173834_alt: "Apartment Telephone",
+      img_32173834_desc: "Telephone available.",
+      img_32162735_alt: "Apartment 21 Living Area",
+      img_32162735_desc: "Apartment 21 living area.",
+      img_32162754_alt: "Shower Room Apartment 21",
+      img_32162754_desc: "Shower room in Apartment 21 (small apartment).",
+      img_32162778_alt: "Apartment 25 Entrance",
+      img_32162778_desc: "Apartment 25 (larger apartment with two levels).",
+      img_32162786_alt: "Apartment 25 Workspace",
+      img_32162786_desc: "Entrance of Apartment 25 with workspace and closet.",
+      img_32162794_alt: "Apartment 25 Upper Level",
+      img_32162794_desc: "Upper level of Apartment 25.",
+      img_32174044_alt: "Sleeping Area Apartment 25",
+      img_32174044_desc: "Sleeping area on the upper level of Apartment 25.",
+      img_32162840_alt: "WC Apartment 25",
+      img_32162840_desc: "Upper WC in Apartment 25.",
+      img_32162845_alt: "Living Area Apartment 25",
+      img_32162845_desc: "Living area with an additional sofa bed.",
+      img_32174059_alt: "Larger Apartment",
+      img_32174059_desc: "Larger apartment with plenty of space.",
     },
     // Map/Directions Section
     map: {

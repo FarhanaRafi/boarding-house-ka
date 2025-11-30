@@ -134,9 +134,26 @@ export default function Features() {
           animation="fade-up"
           className="text-center mb-10 md:mb-16"
         >
-          <span className="text-orange-500 font-semibold text-base md:text-lg">
-            {t.features.label}
-          </span>
+          <div className="relative inline-flex items-center justify-center group">
+            <span className="text-orange-500 font-semibold text-base md:text-lg">
+              {t.features.label}
+              <sup className="text-orange-500 ml-1">*</sup>
+            </span>
+            <div className="absolute bottom-full mb-2 w-max px-3 py-1.5 bg-gray-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+              {t.features.disclaimer}
+              <svg
+                className="absolute text-gray-800 h-2 w-full left-0 top-full"
+                x="0px"
+                y="0px"
+                viewBox="0 0 255 255"
+              >
+                <polygon
+                  className="fill-current"
+                  points="0,0 127.5,127.5 255,0"
+                />
+              </svg>
+            </div>
+          </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-3 md:mb-4">
             {t.features.title}
           </h2>
