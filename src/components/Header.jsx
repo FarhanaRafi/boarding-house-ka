@@ -14,6 +14,16 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    // Cleanup function to restore scroll on component unmount
+    return () => (document.body.style.overflow = "auto");
+  }, []);
+
   const navLinks = [
     { name: t.nav.home, href: "#home" },
     { name: t.nav.about, href: "#ueber-uns" },
@@ -179,13 +189,13 @@ export default function Header() {
 
         {/* Mobile Menu Overlay */}
         <div
-          className={`md:hidden fixed inset-0 z-40 bg-white/98 backdrop-blur-xl transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+          className={`md:hidden fixed inset-0 z-40 bg-white/98 backdrop-blur-xl transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] overflow-y-auto ${
             isMenuOpen
               ? "opacity-100 translate-y-0"
               : "opacity-0 -translate-y-4 pointer-events-none"
           }`}
         >
-          <div className="flex flex-col justify-center items-center h-full gap-6 px-6">
+          <div className="flex flex-col justify-center items-center min-h-full gap-6 px-6 py-24">
             {navLinks.map((link) => (
               <a
                 key={link.name}

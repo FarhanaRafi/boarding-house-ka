@@ -3,12 +3,8 @@ import { LanguageProvider } from "./i18n";
 
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import About from "./components/About";
-import Region from "./components/Region";
 import Features from "./components/Features";
-import Apartments from "./components/Apartments";
 import Gallery from "./components/Gallery";
-import Map from "./components/Map";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Impressum from "./components/Impressum";
@@ -23,13 +19,10 @@ function App() {
       <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-grow">
+          {/* Your existing page components go here */}
           <Hero />
-          <About />
-          <Region />
           <Features />
-          <Apartments />
           <Gallery />
-          <Map />
           <Contact />
         </main>
         <Footer

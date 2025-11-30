@@ -37,7 +37,7 @@ export default function Hero() {
             }`}
             style={{ transitionDelay: "200ms" }}
           >
-            ✨ {t.hero.welcome}
+            {t.hero.welcome}
           </span>
           <h1
             className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4 sm:mb-6 transition-all duration-700 ${

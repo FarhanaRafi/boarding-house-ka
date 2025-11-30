@@ -59,32 +59,31 @@ export default function Contact() {
 
           {/* Email */}
           <AnimateOnScroll animation="fade-up" delay={200} duration={600}>
-            <a
-              href="mailto:info@boardinghousekarlsruhe.de"
-              className="group block bg-gray-50 hover:bg-orange-500 rounded-2xl p-6 md:p-8 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full"
-            >
-              <div className="w-14 h-14 md:w-16 md:h-16 bg-orange-100 group-hover:bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4 transition-all duration-300">
-                <svg
-                  className="w-7 h-7 md:w-8 md:h-8 text-orange-500 group-hover:text-white transition-colors duration-300"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
-              </div>
-              <h4 className="font-semibold text-gray-900 group-hover:text-white mb-2 transition-colors duration-300">
-                {t.contact.email}
-              </h4>
-              <p className="text-gray-600 group-hover:text-white/90 text-sm md:text-base transition-colors duration-300 break-all">
-                info@boardinghousekarlsruhe.de
-              </p>
-            </a>
+            <div className="group bg-gray-50 hover:bg-orange-500 rounded-2xl p-6 md:p-8 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full">
+              <a href="mailto:info@boardinghauskarlsruhe.de" className="block">
+                <div className="w-14 h-14 md:w-16 md:h-16 bg-orange-100 group-hover:bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4 transition-all duration-300">
+                  <svg
+                    className="w-7 h-7 md:w-8 md:h-8 text-orange-500 group-hover:text-white transition-colors duration-300"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+                <h4 className="font-semibold text-gray-900 group-hover:text-white mb-2 transition-colors duration-300">
+                  {t.contact.email}
+                </h4>
+                <p className="text-gray-600 group-hover:text-white/90 text-[13px] sm:text-sm md:text-base transition-colors duration-300 whitespace-nowrap">
+                  info@boardinghauskarlsruhe.de
+                </p>
+              </a>
+            </div>
           </AnimateOnScroll>
 
           {/* Office Address */}
@@ -109,11 +108,11 @@ export default function Contact() {
                 {t.contact.written}
               </h4>
               <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-300 text-sm md:text-base">
-                Büro Gatermann
+                Varsha Lavin & <br /> Lavin Pottekkat
                 <br />
-                Roennebergstr. 17
+                Jöhlinger Str. 9/4
                 <br />
-                12161 Berlin
+                75045 Walzbachtal
               </p>
             </div>
           </AnimateOnScroll>

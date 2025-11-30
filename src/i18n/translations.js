@@ -17,7 +17,7 @@ export const translations = {
       title: "Boardinghouse",
       subtitle: "Karlsruhe",
       description1:
-        "Herzlich Willkommen auf den Seiten des Boardinghouses Karlsruhe / Wohnheims Gatermann!",
+        "Herzlich Willkommen auf den Seiten des Boardinghouses Karlsruhe! ",
       description2:
         "Günstige Übernachtungsmöglichkeiten für Langzeitaufenthalter ab sechs Monaten. Ideal für Gastarbeiter und Mitarbeiter von KIT, Siemens und weiteren Unternehmen in der Region.",
       cta1: "Apartments entdecken",
@@ -140,7 +140,7 @@ export const translations = {
       description2:
         "In jedem Fall stehen wir Ihnen mit Rat, Tat und Antworten zur Seite. Auch für Kritik und Anregungen, Wünsche und Änderungsvorschläge haben wir stets ein offenes Ohr.",
       phone: "Persönlich am Telefon",
-      email: "Internet",
+      email: "Email",
       written: "Schriftlich",
       location: "Wohnheim Standort",
     },
@@ -175,8 +175,7 @@ export const translations = {
       welcome: "Welcome",
       title: "Boarding House",
       subtitle: "Karlsruhe",
-      description1:
-        "Welcome to the Boarding House Karlsruhe / Wohnheim Gatermann!",
+      description1: "Welcome to the Boarding House Karlsruhe!",
       description2:
         "Affordable accommodation for long-term stays from six months. Ideal for guest workers and employees of KIT, Siemens and other companies in the region.",
       cta1: "Discover Apartments",

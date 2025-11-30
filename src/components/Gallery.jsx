@@ -29,15 +29,9 @@ const allImages = [
     src: "/images/32173834.JPG",
     alt: "Apartment Innenansicht",
     description: "Modernes Apartment mit viel Licht",
-    showInGrid: true,
-  },
-  // Additional images (only in slideshow)
-  {
-    src: "/images/32162675.JPG",
-    alt: "Apartment 21 Eingangsbereich",
-    description: "Apartment 21 mit zwei Ebenen",
     showInGrid: false,
   },
+  // Additional images (only in slideshow)
   {
     src: "/images/32162682.JPG",
     alt: "Apartment 21 Arbeitsbereich",
@@ -60,12 +54,6 @@ const allImages = [
     src: "/images/32162754.JPG",
     alt: "Duschbad Apartment 21",
     description: "Duschbad in Apartment 21 (kleines Apartment)",
-    showInGrid: false,
-  },
-  {
-    src: "/images/32174059.JPG",
-    alt: "Größeres Apartment",
-    description: "Größere Apartments ab 1000 Euro pro Monat",
     showInGrid: false,
   },
   {
@@ -102,6 +90,12 @@ const allImages = [
     src: "/images/32162845.JPG",
     alt: "Wohnbereich Apartment 25",
     description: "Wohnbereich mit zusätzlicher Schlafcouch",
+    showInGrid: true,
+  },
+  {
+    src: "/images/32174059.JPG",
+    alt: "Größeres Apartment",
+    description: "Größere Apartments ab 1000 Euro pro Monat",
     showInGrid: false,
   },
 ];
