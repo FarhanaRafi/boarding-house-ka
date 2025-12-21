@@ -1,5 +1,5 @@
 import { useLanguage } from "../i18n";
-import { AnimateOnScroll } from "../hooks/useScrollAnimation";
+import { Link } from "react-router-dom";
 
 export default function Apartments() {
   const { t } = useLanguage();
@@ -39,29 +39,18 @@ export default function Apartments() {
       className="py-16 md:py-20 bg-white overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateOnScroll
-          animation="fade-up"
-          className="text-center mb-10 md:mb-16"
-        >
-          <span className="text-orange-500 font-semibold text-base md:text-lg">
-            {t.apartments.label}
-          </span>
+        <div className="text-center mb-10 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-3 md:mb-4">
             {t.apartments.title}
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             {t.apartments.description}
           </p>
-        </AnimateOnScroll>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
           {apartments.map((apartment, index) => (
-            <AnimateOnScroll
-              key={apartment.id}
-              animation={index === 0 ? "fade-right" : "fade-left"}
-              delay={index * 150}
-              duration={700}
-            >
+            <div key={apartment.id}>
               <div className="group bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col">
                 <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden flex-shrink-0">
                   <img
@@ -87,15 +76,15 @@ export default function Apartments() {
                       </span>
                     ))}
                   </div>
-                  <a
-                    href="#kontakt"
+                  <Link
+                    to="/kontakt"
                     className="block w-full text-center bg-gray-900 hover:bg-orange-500 text-white py-2.5 md:py-3 rounded-lg md:rounded-xl font-semibold transition-colors text-sm md:text-base mt-auto"
                   >
                     {t.apartments.inquire}
-                  </a>
+                  </Link>
                 </div>
               </div>
-            </AnimateOnScroll>
+            </div>
           ))}
         </div>
       </div>

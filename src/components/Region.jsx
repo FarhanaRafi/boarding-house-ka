@@ -1,18 +1,17 @@
 import { useLanguage } from "../i18n";
-import { AnimateOnScroll } from "../hooks/useScrollAnimation";
 
-export default function Region() {
+export default function Region({ id }) {
   const { t } = useLanguage();
 
   return (
-    <section id="region" className="py-16 md:py-20 bg-gray-50 overflow-hidden">
+    <section
+      id={id}
+      className="pt-28 md:pt-32 pb-16 md:pb-20 bg-gray-50 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
           {/* Content */}
-          <AnimateOnScroll animation="fade-right" duration={800}>
-            <span className="text-orange-500 font-semibold text-lg">
-              {t.region.label}
-            </span>
+          <div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">
               {t.region.title}
             </h2>
@@ -21,12 +20,12 @@ export default function Region() {
               <p>{t.region.p2}</p>
               <p>{t.region.p3}</p>
             </div>
-          </AnimateOnScroll>
+          </div>
 
           {/* Features Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
             {/* Card 1 - Freizeit */}
-            <AnimateOnScroll animation="fade-up" delay={100} duration={600}>
+            <div>
               <div className="bg-white rounded-2xl p-5 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full">
                 <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
                   <svg
@@ -48,10 +47,10 @@ export default function Region() {
                 </h3>
                 <p className="text-gray-600 text-sm">{t.region.leisureDesc}</p>
               </div>
-            </AnimateOnScroll>
+            </div>
 
             {/* Card 2 - Anbindung */}
-            <AnimateOnScroll animation="fade-up" delay={200} duration={600}>
+            <div>
               <div className="bg-white rounded-2xl p-5 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full">
                 <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
                   <svg
@@ -75,10 +74,10 @@ export default function Region() {
                   {t.region.transportDesc}
                 </p>
               </div>
-            </AnimateOnScroll>
+            </div>
 
             {/* Card 3 - Nahversorgung */}
-            <AnimateOnScroll animation="fade-up" delay={300} duration={600}>
+            <div>
               <div className="bg-white rounded-2xl p-5 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full">
                 <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
                   <svg
@@ -102,10 +101,10 @@ export default function Region() {
                   {t.region.amenitiesDesc}
                 </p>
               </div>
-            </AnimateOnScroll>
+            </div>
 
             {/* Card 4 - Autobahn */}
-            <AnimateOnScroll animation="fade-up" delay={400} duration={600}>
+            <div>
               <div className="bg-white rounded-2xl p-5 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full">
                 <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
                   <svg
@@ -127,18 +126,16 @@ export default function Region() {
                 </h3>
                 <p className="text-gray-600 text-sm">{t.region.highwayDesc}</p>
               </div>
-            </AnimateOnScroll>
+            </div>
           </div>
         </div>
 
         {/* Additional Info */}
-        <AnimateOnScroll animation="fade-up" delay={200} duration={700}>
-          <div className="mt-12 md:mt-16 bg-white rounded-2xl p-6 md:p-8 shadow-lg">
-            <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-              {t.region.additionalInfo}
-            </p>
-          </div>
-        </AnimateOnScroll>
+        <div className="mt-12 md:mt-16 bg-white rounded-2xl p-6 md:p-8 shadow-lg">
+          <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
+            {t.region.additionalInfo}
+          </p>
+        </div>
       </div>
     </section>
   );

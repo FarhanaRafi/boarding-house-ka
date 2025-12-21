@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useLanguage } from "../i18n";
-import { AnimateOnScroll } from "../hooks/useScrollAnimation";
 
 const getImageData = (t) => [
   {
@@ -83,7 +82,7 @@ const getImageData = (t) => [
   },
 ];
 
-export default function Gallery() {
+export default function Gallery({ id }) {
   const [selectedImage, setSelectedImage] = useState(null);
   const { t } = useLanguage();
 
@@ -114,62 +113,53 @@ export default function Gallery() {
   };
 
   return (
-    <section id="bilder" className="py-16 md:py-20 bg-gray-900 overflow-hidden">
+    <section
+      id={id}
+      className="pt-28 md:pt-32 pb-16 md:pb-20 bg-gray-900 overflow-hidden min-h-screen"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateOnScroll
-          animation="fade-up"
-          className="text-center mb-12 md:mb-16"
-        >
-          <span className="text-orange-500 font-semibold text-lg">
-            {t.gallery.label}
-          </span>
+        <div className="text-center mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mt-2 mb-4">
             {t.gallery.title}
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
             {t.gallery.description}
           </p>
-        </AnimateOnScroll>
+        </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
           {gridImages.map((image, index) => (
-            <AnimateOnScroll
+            <div
               key={index}
-              animation="zoom-in"
-              delay={index * 50}
-              duration={500}
+              onClick={() => openLightbox(image)}
+              className="relative aspect-[4/3] overflow-hidden rounded-xl md:rounded-2xl group cursor-pointer"
             >
-              <div
-                onClick={() => openLightbox(image)}
-                className="relative aspect-[4/3] overflow-hidden rounded-xl md:rounded-2xl group cursor-pointer"
-              >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3 md:p-4">
-                  <span className="text-white font-medium text-xs sm:text-sm md:text-base line-clamp-2">
-                    {image.alt}
-                  </span>
-                </div>
-                <div className="absolute top-2 right-2 md:top-3 md:right-3 w-8 h-8 md:w-10 md:h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <svg
-                    className="w-4 h-4 md:w-5 md:h-5 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
-                    />
-                  </svg>
-                </div>
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3 md:p-4">
+                <span className="text-white font-medium text-xs sm:text-sm md:text-base line-clamp-2">
+                  {image.alt}
+                </span>
               </div>
-            </AnimateOnScroll>
+              <div className="absolute top-2 right-2 md:top-3 md:right-3 w-8 h-8 md:w-10 md:h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <svg
+                  className="w-4 h-4 md:w-5 md:h-5 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                  />
+                </svg>
+              </div>
+            </div>
           ))}
         </div>
       </div>

@@ -1,19 +1,17 @@
 import { useLanguage } from "../i18n";
-import { AnimateOnScroll } from "../hooks/useScrollAnimation";
 
-export default function About() {
+export default function About({ id }) {
   const { t } = useLanguage();
 
   return (
-    <section id="ueber-uns" className="py-16 md:py-20 bg-white overflow-hidden">
+    <section
+      id={id}
+      className="pt-28 md:pt-32 pb-16 md:pb-20 bg-white overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           {/* Image */}
-          <AnimateOnScroll
-            animation="fade-right"
-            duration={800}
-            className="relative group order-2 lg:order-1"
-          >
+          <div className="relative group order-2 lg:order-1">
             <div className="relative rounded-xl md:rounded-2xl overflow-hidden shadow-xl md:shadow-2xl">
               <img
                 src="/images/32173466.JPG"
@@ -21,19 +19,10 @@ export default function About() {
                 className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
-            {/* Stats overlay */}
-          </AnimateOnScroll>
+          </div>
 
           {/* Content */}
-          <AnimateOnScroll
-            animation="fade-left"
-            duration={800}
-            delay={200}
-            className="order-1 lg:order-2"
-          >
-            <span className="text-orange-500 font-semibold text-base md:text-lg">
-              {t.about.label}
-            </span>
+          <div className="order-1 lg:order-2">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4 md:mb-6">
               {t.about.title}
             </h2>
@@ -148,7 +137,7 @@ export default function About() {
                 </div>
               </div>
             </div>
-          </AnimateOnScroll>
+          </div>
         </div>
       </div>
     </section>

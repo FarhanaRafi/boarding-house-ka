@@ -1,7 +1,8 @@
 import { useLanguage } from "../i18n";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-export default function Hero() {
+export default function Hero({ id }) {
   const { t } = useLanguage();
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -13,7 +14,7 @@ export default function Hero() {
 
   return (
     <section
-      id="home"
+      id={id}
       className="relative min-h-screen flex items-center overflow-hidden"
     >
       {/* Background Image with existing photo */}
@@ -72,8 +73,8 @@ export default function Hero() {
             }`}
             style={{ transitionDelay: "900ms" }}
           >
-            <a
-              href="#bilder"
+            <Link
+              to="/bilder"
               className="group inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-orange-500/25"
             >
               {t.hero.cta1}
@@ -90,21 +91,21 @@ export default function Hero() {
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-            </a>
-            <a
-              href="#kontakt"
+            </Link>
+            <Link
+              to="/kontakt"
               className="inline-flex items-center justify-center border-2 border-white/30 text-white hover:bg-white hover:text-gray-900 px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 backdrop-blur-sm hover:border-white"
             >
               {t.hero.cta2}
-            </a>
+            </Link>
           </div>
         </div>
       </div>
 
       {/* Animated scroll indicator - hidden on small screens */}
       <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 hidden sm:block">
-        <a
-          href="#ueber-uns"
+        <Link
+          to="/ueber-uns"
           className="flex flex-col items-center gap-2 group cursor-pointer"
         >
           <span className="text-white/60 text-sm group-hover:text-white/80 transition-colors duration-300">
@@ -113,7 +114,7 @@ export default function Hero() {
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-2 group-hover:border-white/50 transition-colors duration-300">
             <div className="w-1.5 h-1.5 bg-white rounded-full animate-bounce"></div>
           </div>
-        </a>
+        </Link>
       </div>
     </section>
   );

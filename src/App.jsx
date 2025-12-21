@@ -1,48 +1,29 @@
-import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./i18n";
 
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Region from "./components/Region";
-import Features from "./components/Features";
-import Apartments from "./components/Apartments";
-import Gallery from "./components/Gallery";
-import Map from "./components/Map";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import HomePage from "./HomePage";
 import Impressum from "./components/Impressum";
 import Datenschutz from "./components/Datenschutz";
 
 function App() {
-  const [showImpressum, setShowImpressum] = useState(false);
-  const [showDatenschutz, setShowDatenschutz] = useState(false);
-
   return (
     <LanguageProvider>
       <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-grow">
-          <Hero />
-          <About />
-          <Region />
-          <Features />
-          <Apartments />
-          <Gallery />
-          <Map />
-          <Contact />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/impressum" element={<Impressum />} />
+            <Route path="/datenschutz" element={<Datenschutz />} />
+          </Routes>
         </main>
         <Footer
-          onImpressumClick={() => setShowImpressum(true)}
-          onDatenschutzClick={() => setShowDatenschutz(true)}
+          onImpressumClick={() => {}}
+          onDatenschutzClick={() => {}}
         />
       </div>
-
-      {showImpressum && <Impressum onClose={() => setShowImpressum(false)} />}
-
-      {showDatenschutz && (
-        <Datenschutz onClose={() => setShowDatenschutz(false)} />
-      )}
     </LanguageProvider>
   );
 }

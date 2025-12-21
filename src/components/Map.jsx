@@ -1,30 +1,26 @@
 import { useLanguage } from "../i18n";
-import { AnimateOnScroll } from "../hooks/useScrollAnimation";
 
-export default function Map() {
+export default function Map({ id }) {
   const { t } = useLanguage();
 
   return (
-    <section id="anreise" className="py-16 md:py-20 bg-gray-50 overflow-hidden">
+    <section
+      id={id}
+      className="pt-28 md:pt-32 pb-16 md:pb-20 bg-gray-50 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateOnScroll
-          animation="fade-up"
-          className="text-center mb-8 md:mb-12"
-        >
-          <span className="text-orange-500 font-semibold text-base md:text-lg">
-            {t.map.label}
-          </span>
+        <div className="text-center mb-8 md:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-3 md:mb-4">
             {t.map.title}
           </h2>
           <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
             {t.map.description}
           </p>
-        </AnimateOnScroll>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 items-stretch">
           {/* Address Card */}
-          <AnimateOnScroll animation="fade-right" delay={100} duration={700}>
+          <div>
             <div className="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg h-full flex flex-col justify-center">
               <div>
                 <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-6">
@@ -90,15 +86,10 @@ export default function Map() {
                 </a>
               </div>
             </div>
-          </AnimateOnScroll>
+          </div>
 
           {/* Map */}
-          <AnimateOnScroll
-            animation="fade-left"
-            delay={200}
-            duration={700}
-            className="lg:col-span-2"
-          >
+          <div className="lg:col-span-2">
             <div className="rounded-xl md:rounded-2xl overflow-hidden shadow-lg h-[300px] sm:h-[350px] md:h-[400px] lg:h-full lg:min-h-[400px]">
               <iframe
                 title="Boardinghouse Karlsruhe - livein-wg.de"
@@ -111,7 +102,7 @@ export default function Map() {
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
-          </AnimateOnScroll>
+          </div>
         </div>
       </div>
     </section>

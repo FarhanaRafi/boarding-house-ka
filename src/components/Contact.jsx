@@ -1,19 +1,15 @@
 import { useLanguage } from "../i18n";
-import { AnimateOnScroll } from "../hooks/useScrollAnimation";
 
 export default function Contact() {
   const { t } = useLanguage();
 
   return (
-    <section id="kontakt" className="py-16 md:py-20 bg-white overflow-hidden">
+    <section
+      id="kontakt"
+      className="pt-28 md:pt-32 pb-16 md:pb-20 bg-white overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateOnScroll
-          animation="fade-up"
-          className="text-center mb-12 md:mb-16"
-        >
-          <span className="text-orange-500 font-semibold text-lg">
-            {t.contact.label}
-          </span>
+        <div className="text-center mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
             {t.contact.title}
           </h2>
@@ -23,12 +19,12 @@ export default function Contact() {
           <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
             {t.contact.description2}
           </p>
-        </AnimateOnScroll>
+        </div>
 
         {/* Contact Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {/* Phone */}
-          <AnimateOnScroll animation="fade-up" delay={100} duration={600}>
+          <div>
             <a
               href="tel:+4915738754711"
               className="group block bg-gray-50 hover:bg-orange-500 rounded-2xl p-6 md:p-8 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full"
@@ -55,10 +51,10 @@ export default function Contact() {
                 015738754711
               </p>
             </a>
-          </AnimateOnScroll>
+          </div>
 
           {/* Email */}
-          <AnimateOnScroll animation="fade-up" delay={200} duration={600}>
+          <div>
             <div className="group bg-gray-50 hover:bg-orange-500 rounded-2xl p-6 md:p-8 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full">
               <a href="mailto:info@boardinghauskarlsruhe.de" className="block">
                 <div className="w-14 h-14 md:w-16 md:h-16 bg-orange-100 group-hover:bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4 transition-all duration-300">
@@ -84,10 +80,10 @@ export default function Contact() {
                 </p>
               </a>
             </div>
-          </AnimateOnScroll>
+          </div>
 
           {/* Office Address */}
-          <AnimateOnScroll animation="fade-up" delay={300} duration={600}>
+          <div>
             <div className="group bg-gray-50 hover:bg-orange-500 rounded-2xl p-6 md:p-8 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full">
               <div className="w-14 h-14 md:w-16 md:h-16 bg-orange-100 group-hover:bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4 transition-all duration-300">
                 <svg
@@ -115,10 +111,10 @@ export default function Contact() {
                 75045 Walzbachtal
               </p>
             </div>
-          </AnimateOnScroll>
+          </div>
 
           {/* Wohnheim Address */}
-          <AnimateOnScroll animation="fade-up" delay={400} duration={600}>
+          <div>
             <div className="group bg-gray-50 hover:bg-orange-500 rounded-2xl p-6 md:p-8 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full">
               <div className="w-14 h-14 md:w-16 md:h-16 bg-orange-100 group-hover:bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4 transition-all duration-300">
                 <svg
@@ -150,7 +146,7 @@ export default function Contact() {
                 76149 Karlsruhe-Neureut
               </p>
             </div>
-          </AnimateOnScroll>
+          </div>
         </div>
       </div>
     </section>

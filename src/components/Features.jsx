@@ -1,5 +1,4 @@
 import { useLanguage } from "../i18n";
-import { AnimateOnScroll } from "../hooks/useScrollAnimation";
 
 // Icon components (static, don't need translation)
 const icons = {
@@ -95,7 +94,7 @@ const icons = {
   ),
 };
 
-export default function Features() {
+export default function Features({ id }) {
   const { t } = useLanguage();
 
   const features = [
@@ -128,60 +127,36 @@ export default function Features() {
   ];
 
   return (
-    <section id="service" className="py-16 md:py-20 bg-gray-50 overflow-hidden">
+    <section
+      id={id}
+      className="pt-28 md:pt-32 pb-16 md:pb-20 bg-gray-50 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateOnScroll
-          animation="fade-up"
-          className="text-center mb-10 md:mb-16"
-        >
-          <div className="relative inline-flex items-center justify-center group">
-            <span className="text-orange-500 font-semibold text-base md:text-lg">
-              {t.features.label}
-              <sup className="text-orange-500 ml-1">*</sup>
-            </span>
-            <div className="absolute bottom-full mb-2 w-max px-3 py-1.5 bg-gray-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-              {t.features.disclaimer}
-              <svg
-                className="absolute text-gray-800 h-2 w-full left-0 top-full"
-                x="0px"
-                y="0px"
-                viewBox="0 0 255 255"
-              >
-                <polygon
-                  className="fill-current"
-                  points="0,0 127.5,127.5 255,0"
-                />
-              </svg>
-            </div>
-          </div>
+        <div className="text-center mb-10 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-3 md:mb-4">
             {t.features.title}
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             {t.features.description}
           </p>
-        </AnimateOnScroll>
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {features.map((feature, index) => (
-            <AnimateOnScroll
+            <div
               key={index}
-              animation="fade-up"
-              delay={index * 100}
-              duration={600}
+              className="group bg-white rounded-xl md:rounded-2xl p-5 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full"
             >
-              <div className="group bg-white rounded-xl md:rounded-2xl p-5 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full">
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-orange-100 rounded-lg md:rounded-xl flex items-center justify-center text-orange-500 mb-4 md:mb-6 transition-all duration-300 group-hover:bg-orange-500 group-hover:text-white group-hover:scale-110">
-                  {feature.icon}
-                </div>
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 text-sm md:text-base">
-                  {feature.description}
-                </p>
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-orange-100 rounded-lg md:rounded-xl flex items-center justify-center text-orange-500 mb-4 md:mb-6 transition-all duration-300 group-hover:bg-orange-500 group-hover:text-white group-hover:scale-110">
+                {feature.icon}
               </div>
-            </AnimateOnScroll>
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">
+                {feature.title}
+              </h3>
+              <p className="text-gray-600 text-sm md:text-base">
+                {feature.description}
+              </p>
+            </div>
           ))}
         </div>
       </div>

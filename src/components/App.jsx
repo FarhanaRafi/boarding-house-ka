@@ -1,14 +1,21 @@
 import { useState } from "react";
-import { LanguageProvider } from "./i18n";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { LanguageProvider } from "../i18n";
 
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Features from "./components/Features";
-import Gallery from "./components/Gallery";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import Impressum from "./components/Impressum";
-import Datenschutz from "./components/Datenschutz";
+import Header from "./Header";
+import Hero from "./Hero";
+import Features from "./Features";
+import Gallery from "./Gallery";
+import Contact from "./Contact";
+import Footer from "./Footer";
+import Impressum from "./Impressum";
+import Datenschutz from "./Datenschutz";
+import About from "./About";
+import Region from "./Region";
+import Map from "./Map";
+import Apartments from "./Apartments";
+import Pricing from "./Pricing";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
   const [showImpressum, setShowImpressum] = useState(false);
@@ -16,14 +23,28 @@ function App() {
 
   return (
     <LanguageProvider>
-      <div className="flex flex-col min-h-screen">
+      <ScrollToTop />
+      <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
         <Header />
         <main className="flex-grow">
-          {/* Your existing page components go here */}
-          <Hero />
-          <Features />
-          <Gallery />
-          <Contact />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Hero />
+                  <Apartments />
+                </>
+              }
+            />
+            <Route path="/ueber-uns" element={<About />} />
+            <Route path="/region" element={<Region />} />
+            <Route path="/service" element={<Features />} />
+            <Route path="/bilder" element={<Gallery />} />
+            <Route path="/anreise" element={<Map />} />
+            <Route path="/kontakt" element={<Contact />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
         </main>
         <Footer
           onImpressumClick={() => setShowImpressum(true)}
