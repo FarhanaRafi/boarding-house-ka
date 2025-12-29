@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLanguage } from "../i18n";
 
-export default function Header() {
+export default function Header({ forceScrolled = false }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { language, toggleLanguage, t } = useLanguage();
@@ -37,7 +37,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${
-        isScrolled
+        isScrolled  || forceScrolled
           ? "bg-white/95 backdrop-blur-md shadow-sm border-gray-100 py-3"
           : "bg-transparent border-transparent py-5"
       }`}
@@ -46,11 +46,11 @@ export default function Header() {
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* --- LOGO START --- */}
           {/* Reduced gap from gap-3 to gap-1.5 (mobile) and gap-2 (desktop) */}
-          <a href="#home" className="flex items-center gap-1.5 md:gap-2 group">
+          <a href="/" className="flex items-center gap-1.5 md:gap-2 group">
             {/* 1. Icon */}
             <div
               className={`transition-all duration-500 transform group-hover:rotate-3 ${
-                isScrolled ? "text-orange-500" : "text-white"
+                isScrolled  || forceScrolled ? "text-orange-500" : "text-white"
               }`}
             >
               <svg
@@ -68,7 +68,7 @@ export default function Header() {
               {/* Top Line */}
               <h1
                 className={`text-sm md:text-base font-black uppercase tracking-widest leading-none transition-colors duration-300 ${
-                  isScrolled ? "text-gray-800" : "text-white/95"
+                  isScrolled  || forceScrolled ? "text-gray-800" : "text-white/95"
                 }`}
               >
                 Boarding House
@@ -78,7 +78,7 @@ export default function Header() {
               <div className="flex items-baseline gap-2 mt-1">
                 <span
                   className={`text-[11px] font-medium italic font-serif ${
-                    isScrolled ? "text-gray-400" : "text-white/60"
+                    isScrolled  || forceScrolled ? "text-gray-400" : "text-white/60"
                   }`}
                 >
                   by
@@ -98,7 +98,7 @@ export default function Header() {
                 key={link.name}
                 href={link.href}
                 className={`text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:text-orange-500 relative group/link ${
-                  isScrolled
+                  isScrolled  || forceScrolled
                     ? "text-gray-600"
                     : "text-white/90 hover:text-white"
                 }`}
@@ -110,7 +110,7 @@ export default function Header() {
 
             <div
               className={`h-5 w-px ${
-                isScrolled ? "bg-gray-200" : "bg-white/20"
+                isScrolled  || forceScrolled ? "bg-gray-200" : "bg-white/20"
               }`}
             ></div>
 
@@ -118,7 +118,7 @@ export default function Header() {
             <button
               onClick={toggleLanguage}
               className={`flex items-center gap-2 text-xs font-bold transition-colors duration-300 ${
-                isScrolled
+                isScrolled  || forceScrolled
                   ? "text-gray-500 hover:text-orange-500"
                   : "text-white/80 hover:text-white"
               }`}
@@ -164,19 +164,19 @@ export default function Header() {
             >
               <span
                 className={`h-0.5 w-full bg-current transition-all duration-300 ${
-                  isScrolled || isMenuOpen ? "text-gray-900" : "text-white"
+                  isScrolled  || forceScrolled || isMenuOpen ? "text-gray-900" : "text-white"
                 } ${
                   isMenuOpen ? "rotate-45 translate-y-0.5" : "group-hover:w-3/4"
                 }`}
               />
               <span
                 className={`h-0.5 w-3/4 bg-current transition-all duration-300 ${
-                  isScrolled || isMenuOpen ? "text-gray-900" : "text-white"
+                  isScrolled  || forceScrolled || isMenuOpen ? "text-gray-900" : "text-white"
                 } ${isMenuOpen ? "opacity-0" : "group-hover:w-full"}`}
               />
               <span
                 className={`h-0.5 w-full bg-current transition-all duration-300 ${
-                  isScrolled || isMenuOpen ? "text-gray-900" : "text-white"
+                  isScrolled  || forceScrolled || isMenuOpen ? "text-gray-900" : "text-white"
                 } ${
                   isMenuOpen
                     ? "-rotate-45 -translate-y-0.5"

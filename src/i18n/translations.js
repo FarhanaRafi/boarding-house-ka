@@ -187,6 +187,11 @@ export const translations = {
       allRights: "Alle Rechte vorbehalten.",
       responsible: "Inhaltlich verantwortlich",
     },
+    notFound:{
+      mainText:"Nicht Gefunden",
+      midText:"Die angeforderte Seite wurde nicht gefunden.",
+      buttonText:"Zur Startseite",
+    },
   },
   en: {
     // Header & Navigation
@@ -374,6 +379,11 @@ export const translations = {
       taxNumber: "Tax Number",
       allRights: "All rights reserved.",
       responsible: "Responsible for content",
+    },
+    notFound:{
+      mainText:"Not Found",
+      midText:"The requested page was not found.",
+      buttonText:"Go To Homepage",
     },
   },
 };

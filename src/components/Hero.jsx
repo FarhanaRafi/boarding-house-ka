@@ -39,7 +39,7 @@ export default function Hero() {
           >
             {t.hero.welcome}
           </span>
-          <h1
+          <h2
             className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4 sm:mb-6 transition-all duration-700 ${
               isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
@@ -49,7 +49,7 @@ export default function Hero() {
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 mt-1 sm:mt-2">
               {t.hero.subtitle}
             </span>
-          </h1>
+          </h2>
           <p
             className={`text-base sm:text-lg md:text-xl text-gray-300 mb-3 sm:mb-4 leading-relaxed max-w-xl transition-all duration-700 ${
               isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
