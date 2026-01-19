@@ -30,6 +30,7 @@ export default function Header({ forceScrolled = false }) {
     { name: t.nav.region, href: "#region" },
     { name: t.nav.service, href: "#service" },
     { name: t.nav.gallery, href: "#bilder" },
+    { name: t.nav.faq, href: "#faq" },
     { name: t.nav.directions, href: "#anreise" },
     { name: t.nav.contact, href: "#kontakt" },
   ];
@@ -92,7 +93,7 @@ export default function Header({ forceScrolled = false }) {
           {/* --- LOGO END --- */}
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-4">
             {navLinks.map((link) => (
               <a
                 key={link.name}

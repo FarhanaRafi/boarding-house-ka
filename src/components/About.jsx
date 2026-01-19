@@ -43,10 +43,21 @@ export default function About() {
             <p className="text-base md:text-lg text-gray-600 mb-4 md:mb-6 leading-relaxed">
               {t.about.p2}
             </p>
-            <p className="text-base md:text-lg text-gray-600 mb-6 md:mb-8 leading-relaxed">
-              {t.about.p3} <strong>{t.about.hotelComfort}</strong>{" "}
+            <p className="text-base md:text-lg text-gray-600 mb-4 md:mb-6 leading-relaxed">
+              {t.about.p3}
+            </p>
+            
+            
+          </AnimateOnScroll>
+        </div>
+        <p className="text-base md:text-lg text-gray-600 mb-4 md:mb-6 leading-relaxed">
+              {t.about.p4}
+            </p>
+        <p className="text-base md:text-lg text-gray-600 mb-6 md:mb-8 leading-relaxed">
+              {t.about.p5} <strong>{t.about.hotelComfort}</strong>{" "}
               {t.about.p3End}
             </p>
+
 
             <div className="grid grid-cols-2 gap-4 md:gap-6">
               <div className="flex items-start space-x-3 group/item cursor-pointer">
@@ -148,8 +159,6 @@ export default function About() {
                 </div>
               </div>
             </div>
-          </AnimateOnScroll>
-        </div>
       </div>
     </section>
   );

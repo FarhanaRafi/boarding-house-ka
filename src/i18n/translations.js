@@ -7,6 +7,7 @@ export const translations = {
       region: "Region",
       service: "Service",
       gallery: "Bilder",
+      faq: "FAQ",
       directions: "Anreise",
       contact: "Kontakt",
       inquire: "Anfragen",
@@ -26,78 +27,83 @@ export const translations = {
     },
     // About Section
     about: {
-      label: "Wir über uns",
-      title: "Schön, dass Sie bei uns vorbeischauen",
-      p1: "Wir haben uns zum Ziel gesetzt, Gästen den Arbeitseinsatz in der Fremde durch perfekten Service und intensive Beratung im Vorfeld so angenehm wie möglich zu gestalten.",
-      p2: "Unser Personal besticht durch profunde Fachkenntnisse, Engagement und Zielsicherheit. Der Ton unserer Mitarbeiter ist stets freundlich und höflich.",
-      p3: "Wir wollen, dass unsere Kunden sich nur auf die Arbeit konzentrieren können und daher in Ihrem temporären zu Hause annähernd",
+      label: "Über uns",
+      title: "Schön, dass Sie uns besuchen",
+      p1: "Schön, dass Sie das Boardinghouse Karlsruhe besuchen – ein zuverlässiges Boardinghouse in Karlsruhe mit komfortablen Lösungen für langfristiges Wohnen.",
+      p2: "Unser Ziel ist es, Aufenthalte in Karlsruhe durch persönlichen Service und eine umfassende Beratung vor der Anreise so angenehm und stressfrei wie möglich zu gestalten. Wir unterstützen internationale Fachkräfte, Gastarbeiter, Forschende und Studierende – einschließlich Angehöriger des Karlsruher Instituts für Technologie (KIT) –, die eine hochwertige und strukturierte Unterkunft in Karlsruhe suchen.",
+      p3: "Unser erfahrenes Team zeichnet sich durch Fachkompetenz, Engagement und eine serviceorientierte Arbeitsweise aus. Wir kommunizieren freundlich und professionell und gewährleisten eine zuverlässige Betreuung unserer Bewohner in den Boardinghouse-Apartments und Zimmern in Karlsruhe.",
+      p4: "Wir möchten, dass sich unsere Gäste ganz auf ihre Arbeit, ihr Studium oder ihre Forschungsprojekte konzentrieren können und dabei hotelähnlichen Komfort in ihrem temporären Zuhause genießen. Dieses Selbstverständnis spiegelt sich in unseren Serviced Apartments und möblierten Zimmern in Karlsruhe wider – ideal für Fachkräfte, Gastwissenschaftler, Doktoranden und Studierende, die ein ruhiges und gut organisiertes Wohnumfeld suchen.",
+      p5: "Unser Boardinghouse bietet eine ruhige, langfristige Alternative zur klassischen WG oder zum Studentenwohnheim. Wir begrüßen Studierende, Doktoranden und Forschende – auch vom Karlsruher Institut für Technologie (KIT) –, die eine hochwertige Studentenunterkunft in Karlsruhe mit Privatsphäre, Komfort und professioneller Verwaltung suchen. Unsere möblierten Apartments und WG-ähnlichen Zimmer richten sich an Bewohner, die ein strukturiertes Wohnumfeld schätzen und einen längeren Aufenthalt in Karlsruhe planen.",
       hotelComfort: "Hotelkomfort",
-      p3End: "genießen können. Dafür setzen wir uns ein.",
+      p3End: "in ihrem temporären Zuhause. Dafür setzen wir uns ein.",
       newBuilding: "Modern",
-      modernComfortable: "komfortabel",
+      modernComfortable: "Komfortabel",
       friendly: "Freundlich",
-      friendlyDesc: "Stets höflicher Service",
-      duration: "Ab 6 Monate",
-      durationDesc: "Langzeit-Aufenthalte",
+      friendlyDesc: "Stets höflicher und professioneller Service für Fachkräfte, Studierende und Forschende – einschließlich Gastarbeiter, KIT-Angehöriger und Langzeitbewohner in Karlsruhe.",
+      duration: "Ab 6 Monaten",
+      durationDesc: "Langzeitaufenthalte ab 6 Monaten – ideal für Mitarbeiterunterkünfte, Gastwissenschaftler, Doktoranden und Studierende mit längerem Aufenthalt in Karlsruhe.",
       comfort: "Hotelkomfort",
-      comfortDesc: "Wie zu Hause fühlen",
-      appointment: "Vor-Ort-Termin",
-      appointmentDesc: "Überzeugen Sie sich selbst",
+      comfortDesc: "Fühlen Sie sich wie zu Hause mit hotelähnlichem Komfort in unseren voll möblierten Apartments und Zimmern in Karlsruhe – ausgelegt für konzentriertes Arbeiten, Studieren und den Alltag.",
+      appointment: "Besichtigung vor Ort",
+      appointmentDesc: "Besichtigungen sind nach vorheriger Terminvereinbarung möglich. Erleben Sie den Komfort unseres Boardinghouses und der Langzeitunterkünfte in Karlsruhe – geeignet für Fachkräfte, Forschende und Studierende gleichermaßen.",
     },
+    
     // Region Section
     region: {
       label: "Region",
       title: "Unsere Umgebung",
-      p1: "Unser Boardinghaus / Wohnheim ist ruhig und dennoch zentral gelegen (in einer Seitenstraße von Karlsruhe-Neureut, unweit der Straßenbahnhaltestelle Bärenweg, Linien S1/S11).",
-      p2: "Der Karlsruher Stadtteil Neureut ist ca. 5 km nördlich von der Karlsruher Innenstadt entfernt. Da dieser Stadtteil bis 1975 eine eigenständige Gemeinde war, lebt man hier wie in einer eigenen Kleinstadt.",
-      p3: "Ein Schulzentrum mit allen Schulen, Sporteinrichtungen mit Hallenbad, Kindergärten, Ärzte und Einkaufszentrum mit vielen Geschäften sind Beispiele für die hervorragende Nahversorgung.",
-      leisure: "Freizeitmöglichkeiten",
+      p1: "Unser Boardinghouse / unsere residence-ähnliche Unterkunft befindet sich in einer ruhigen und zugleich zentralen Seitenstraße in Karlsruhe-Neureut, nahe der Straßenbahnhaltestelle Bärenweg (Linien S1/S11). Dadurch ist sie eine praktische und sehr gut angebundene Wohnlösung für Fachkräfte, Gastwissenschaftler und Studierende – einschließlich Angehöriger des Karlsruher Instituts für Technologie (KIT).",
+      p2: "Der Stadtteil Karlsruhe-Neureut liegt etwa 5 km nördlich des Karlsruher Stadtzentrums. Bis 1975 eine eigenständige Gemeinde, hat sich Neureut seinen kleinstädtischen Charakter bewahrt, den viele Langzeitbewohner besonders schätzen. Diese ruhige Umgebung ist ideal für alle, die möblierte Apartments in Karlsruhe für einen längeren Aufenthalt suchen – sei es aus beruflichen, akademischen oder wissenschaftlichen Gründen.",
+      p3: "Ein nahegelegenes Schulzentrum mit allen Schulformen, Sporteinrichtungen einschließlich eines Hallenbads, Kindergärten, Arztpraxen sowie ein Einkaufszentrum mit zahlreichen Geschäften unterstreichen die hervorragende lokale Infrastruktur rund um unsere Apartments.",
+      leisure: "Freizeitaktivitäten",
       leisureDesc:
-        "Idyllische Rheinaue im Westen und ausgedehnte Waldflächen des Hardtwaldes im Osten.",
+        "Die idyllischen Rheinauen im Westen und der weitläufige Hardtwald im Osten bieten hervorragende Möglichkeiten zur Erholung, für Spaziergänge und Outdoor-Aktivitäten. Diese grünen Umgebung wird besonders von Bewohnern unserer Serviced Apartments und Langzeitunterkünfte in Karlsruhe geschätzt, die einen Ausgleich zu beruflichen oder akademischen Verpflichtungen suchen.",
       transport: "Verkehrsanbindung",
       transportDesc:
-        "Straßenbahn in bequemer Nähe, verbindet Neureut mit der Karlsruher Innenstadt und dem Hauptbahnhof.",
-      amenities: "Nahversorgung",
+        "Eine fußläufig erreichbare Straßenbahnhaltestelle verbindet Neureut direkt mit dem Karlsruher Stadtzentrum und dem Hauptbahnhof und erleichtert so den täglichen Arbeitsweg für Mitarbeiter, Studierende und Forschende. Das Straßenbahnnetz bietet zudem eine bequeme Anbindung an die umliegenden Hardtgemeinden wie Eggenstein-Leopoldshafen und Linkenheim-Hochstetten.",
+      amenities: "Lokale Infrastruktur",
       amenitiesDesc:
-        "Einkaufszentrum mit vielen Geschäften, Ärzte und alle wichtigen Einrichtungen des täglichen Bedarfs.",
+        "Ein nahegelegenes Einkaufszentrum, Arztpraxen sowie alle Einrichtungen des täglichen Bedarfs sorgen für ein hohes Maß an Komfort für Bewohner, die eine stabile und langfristige Unterkunft in Karlsruhe suchen.",
       highway: "Autobahnanbindung",
       highwayDesc:
-        "Über die B36 schneller Zugang zur Autobahn und allen wichtigen Hauptverkehrsstraßen.",
+        "Die Bundesstraße B36 bietet eine schnelle Anbindung an das Autobahnnetz sowie an alle wichtigen Verkehrsachsen Karlsruhes – ein klarer Vorteil für Pendler und Fachkräfte, die regional tätig sind.",
       additionalInfo:
-        "Auch die Freizeitmöglichkeiten sind vielfältig. Mit der idyllischen Rheinaue im Westen und den ausgedehnten Waldflächen des Hardtwaldes im Osten bietet dieser beliebte Stadtteil herausragende Freizeitmöglichkeiten. Die Straßenbahn verbindet Neureut auf kurzem Wege mit der Karlsruher Innenstadt und dem Hauptbahnhof oder auch mit den umliegenden Hardtgemeinden (Eggenstein-Leopoldshafen oder Linkenheim-Hochstetten). Über die B36 gelangt man schnell auf die Autobahn und alle wichtigen Hauptverkehrsstraßen von Karlsruhe.",
+        "Auch die Freizeitmöglichkeiten sind vielfältig. Mit den idyllischen Rheinauen im Westen und den ausgedehnten Waldflächen des Hardtwaldes im Osten bietet dieser beliebte Stadtteil hervorragende Erholungsmöglichkeiten. Die Straßenbahn verbindet Neureut direkt mit dem Karlsruher Stadtzentrum und dem Hauptbahnhof sowie mit den umliegenden Hardtgemeinden (Eggenstein-Leopoldshafen oder Linkenheim-Hochstetten). Über die B36 erreichen Sie schnell die Autobahn und alle wichtigen Verkehrswege Karlsruhes.",
     },
+    
     // Features/Service Section
     features: {
-      label: "Service",
-      title: "Bei uns ist der Gast König",
+      label: "Services",
+      title: "Der Gast steht im Mittelpunkt",
       description:
-        "Deshalb liegt es uns sehr am Herzen, eine freundliche und entspannende Atmosphäre zu schaffen. Unser Haus ist neu und ansprechend und jedes Apartment verfügt über modernes Mobiliar.",
-      disclaimer: "Dienstleistungen unterliegen Bedingungen und Verfügbarkeit.",
+        "Bei uns steht der Gast wirklich im Mittelpunkt. Die Schaffung einer freundlichen, ruhigen und entspannten Wohnatmosphäre ist zentraler Bestandteil unserer Philosophie. Unser Gebäude ist modern und gepflegt, und alle Apartments sind zeitgemäß ausgestattet – ideal für Fachkräfte, Gastwissenschaftler, Doktoranden und Studierende.",
+      disclaimer: "Leistungen vorbehaltlich Verfügbarkeit und Bedingungen.",
       cleaning: "Wöchentlicher Reinigungsservice",
       cleaningDesc:
-        "Einmal wöchentlich bieten wir einen Reinigungsservice der Gemeinschaftsräume.",
+        "Die Gemeinschaftsbereiche werden einmal pro Woche professionell gereinigt.",
       internet: "Kostenloses Internet",
       internetDesc:
-        "Jedes Apartment enthält mindestens eine LAN-Steckdose in der Nähe des Schreibtisches und kostenloses WLAN.",
-      phone: "Gratis-Telefonate",
+        "Jedes Apartment verfügt über kostenloses WLAN sowie mindestens eine LAN-Steckdose in Arbeitsplatznähe – ideal für Arbeit, Studium und Forschung.",
+      phone: "Kostenlose Telefonate",
       phoneDesc:
-        "Telefon mit eigener Direktwahl-Rufnummer und kostenlose Gespräche ins Deutsche Festnetz.",
-      tv: "TV mit SAT-Empfang",
+        "Ein Telefon mit eigener Durchwahl sowie kostenlosen Gesprächen ins deutsche Festnetz.",
+      tv: "TV mit Satellitenempfang",
       tvDesc:
-        "Jedes Apartment verfügt über einen Fernseher mit SAT-Empfang für Ihre Unterhaltung.",
+        "Jedes Apartment ist mit einem Fernseher und Satellitenempfang ausgestattet.",
       safe: "Safe im Apartment",
       safeDesc:
-        "Zu Ihrer Sicherheit enthält jedes Apartment einen Safe für Ihre Wertsachen.",
-      common: "Gemeinschaftsräume",
+        "Für zusätzliche Sicherheit ist jedes Apartment mit einem persönlichen Safe für Wertsachen ausgestattet.",
+      common: "Gemeinschaftsbereiche",
       commonDesc:
-        "Aufenthaltsraum mit moderner Küche für alle Bewohner. Waschraum mit Waschmaschine und Trockner.",
+        "Ein gemeinsamer Aufenthaltsraum mit moderner Küche steht allen Bewohnern zur Verfügung, ebenso ein Waschraum mit Waschmaschine und Trockner.",
     },
+    
     // Apartments Section
     apartments: {
       label: "Apartments",
       title: "Unsere Apartments",
       description:
-        "Wählen Sie aus unseren modern eingerichteten Apartments – alle mit eigenem Duschbad, Möblierung und kostenlosem WLAN.",
+        "Wählen Sie aus unseren modern möblierten Apartments, die alle Folgendes bieten:",
       small: "Kleines Apartment (21)",
       smallDesc:
         "Apartment mit zwei Ebenen, unten der Arbeitsbereich mit Schränken und Duschbad, oben der Schlafbereich.",
@@ -150,6 +156,24 @@ export const translations = {
       img_32174059_alt: "Größeres Apartment",
       img_32174059_desc: "Größeres Apartment mit viel Platz.",
     },
+    // FAQ Section
+    faq: {
+      label: "FAQ",
+      title: "Häufig gestellte Fragen",
+      description:
+        "Studentenunterkunft, WG & Langzeitwohnen in Karlsruhe",
+      q1: "Handelt es sich um eine WG oder ein Studentenwohnheim?",
+      a1: "Nein. Unser Boardinghouse ist weder eine klassische WG noch ein Studentenwohnheim. Wir bieten private, möblierte Apartments sowie WG-ähnliche Zimmer für Langzeitaufenthalte ab sechs Monaten in einer ruhigen und professionell verwalteten Umgebung.",
+      q2: "Ist die Unterkunft für KIT-Studierende und Forschende geeignet?",
+      a2: "Ja. Wir beherbergen regelmäßig KIT-Studierende, Doktoranden und Gastwissenschaftler, die eine langfristige Studentenunterkunft in Karlsruhe-Neureut mit zuverlässiger Infrastruktur, guter Verkehrsanbindung und ruhiger Wohnatmosphäre suchen.",
+      q3: "Wie lange ist der Mindestaufenthalt?",
+      a3: "Der Mindestaufenthalt beträgt sechs Monate und ist ideal für längere Studienphasen, Forschungsprojekte, Praktika und berufliche Einsätze in Karlsruhe.",
+      q4: "Ist die Unterkunft für internationale Studierende geeignet?",
+      a4: "Ja. Unsere möblierten Apartments eignen sich hervorragend für internationale Studierende und Forschende, die eine bezugsfertige Unterkunft mit klaren Strukturen, moderner Ausstattung und professioneller Betreuung bevorzugen.",
+      q5: "Ist diese Unterkunft für Familien geeignet?",
+      a5: "Unser Wohnkonzept richtet sich in erster Linie an Einzelpersonen und Paare, die ruhiges Langzeitwohnen suchen. Es ist nicht als Familienunterkunft konzipiert."
+    },
+    
     // Map/Directions Section
     map: {
       label: "Anreise",
@@ -201,6 +225,7 @@ export const translations = {
       region: "Region",
       service: "Services",
       gallery: "Gallery",
+      faq: "FAQ",
       directions: "Directions",
       contact: "Contact",
       inquire: "Inquire",
@@ -221,41 +246,43 @@ export const translations = {
     about: {
       label: "About Us",
       title: "We're glad you're visiting us",
-      p1: "We have made it our goal to make work assignments abroad as pleasant as possible for guests through perfect service and intensive consultation in advance.",
-      p2: "Our staff impresses with profound expertise, commitment and goal orientation. Our employees are always friendly and polite.",
-      p3: "We want our customers to be able to focus solely on their work and therefore enjoy near",
+      p1: "It’s great that you’re visiting Boardinghouse Karlsruhe, a reliable boarding house in Karlsruhe offering comfortable long-term living solutions.",
+      p2: "Our goal is to make stays in Karlsruhe as pleasant and stress-free as possible through personalized service and thorough consultation before arrival. We support international professionals, guest workers, researchers, and students, including those affiliated with Karlsruhe Institute of Technology (KIT), who are looking for high-quality, structured accommodation in Karlsruhe.",
+      p3: "Our experienced team stands out for its expertise, dedication, and service-oriented mindset. We communicate in a friendly and professional manner, ensuring reliable support for residents living in our boarding house apartments and rooms in Karlsruhe. ",
+      p4:"We want our guests to focus fully on their work, studies, or research projects, while enjoying near-hotel comfort in their temporary home. This commitment is reflected in our serviced apartments and furnished rooms in Karlsruhe, ideal for professionals, visiting researchers, doctoral candidates, and students seeking a quiet and well-managed living environment. ",
+      p5: "Our boarding house offers a quiet, long-term alternative to a classic WG (shared apartment) or student dormitory. We welcome students, doctoral candidates, and researchers, including those affiliated with Karlsruhe Institute of Technology (KIT), who are looking for high-quality student accommodation in Karlsruhe with privacy, comfort, and professional management. Our furnished apartments and WG-style rooms are designed for residents who value a structured living environment and plan to stay in Karlsruhe for an extended period. ",
       hotelComfort: "hotel comfort",
       p3End: "in their temporary home. That's what we strive for.",
       newBuilding: "Modern",
       modernComfortable: "Comfortable",
       friendly: "Friendly",
-      friendlyDesc: "Always polite service",
+      friendlyDesc: "Always courteous and professional service for professionals, students, and researchers, including those seeking guest worker accommodation, KIT-related stays, or long-term living solutions in Karlsruhe. ",
       duration: "From 6 Months",
-      durationDesc: "Long-term stays",
+      durationDesc: "Long-term stays from 6 months, ideal for employee accommodation, visiting researchers, doctoral candidates, and students planning extended stays in Karlsruhe.",
       comfort: "Hotel Comfort",
-      comfortDesc: "Feel at home",
+      comfortDesc: "Feel at home with near-hotel comfort in our fully furnished apartments and rooms in Karlsruhe, designed for focused work, study, and everyday living. ",
       appointment: "On-Site Visit",
-      appointmentDesc: "See for yourself",
+      appointmentDesc: "Visits are possible by prior arrangement. Experience the comfort of our boarding house and long-term accommodation in Karlsruhe, suitable for professionals, researchers, and students alike. ",
     },
     // Region Section
     region: {
       label: "Region",
       title: "Our Surroundings",
-      p1: "Our boarding house / residence is quietly yet centrally located (in a side street of Karlsruhe-Neureut, near the Bärenweg tram stop, lines S1/S11).",
-      p2: "The Karlsruhe district of Neureut is about 5 km north of Karlsruhe city center. Since this district was an independent municipality until 1975, living here feels like being in a small town of its own.",
-      p3: "A school center with all schools, sports facilities with indoor pool, kindergartens, doctors and shopping center with many stores are examples of the excellent local amenities.",
+      p1: "Our boarding house / residence-style accommodation is located in a quiet yet central side street in Karlsruhe-Neureut, close to the Bärenweg tram stop (lines S1/S11). This makes it a practical and well-connected living option for professionals, visiting researchers, and students, including those affiliated with Karlsruhe Institute of Technology (KIT). ",
+      p2: "The district of Karlsruhe-Neureut lies approximately 5 km north of Karlsruhe city center. Formerly an independent municipality until 1975, Neureut retains a small-town character, which many long-term residents appreciate. This calm environment is ideal for those seeking furnished apartments in Karlsruhe for extended stays, whether for work, study, or research. ",
+      p3: "A nearby school center with all school types, sports facilities including an indoor swimming pool, kindergartens, medical practices, and a shopping center with numerous stores underline the excellent local infrastructure around our apartments. ",
       leisure: "Leisure Activities",
       leisureDesc:
-        "Idyllic Rhine meadows in the west and extensive forest areas of the Hardtwald in the east.",
-      transport: "Public Transport",
+        "The idyllic Rhine floodplains to the west and the extensive Hardtwald forest to the east provide outstanding opportunities for relaxation, walking, and outdoor activities. These green surroundings are especially valued by residents of our serviced apartments and long-term accommodation in Karlsruhe who seek balance alongside work or academic commitments. ",
+      transport: "Transport Links",
       transportDesc:
-        "Tram within easy reach, connecting Neureut with Karlsruhe city center and the main train station.",
+        "A tram stop within walking distance connects Neureut directly with Karlsruhe city center and the main train station, making daily commuting easy for employees, students, and researchers. The tram network also provides convenient access to surrounding Hardt communities such as Eggenstein-Leopoldshafen and Linkenheim-Hochstetten. ",
       amenities: "Local Amenities",
       amenitiesDesc:
-        "Shopping center with many stores, doctors and all essential daily services.",
-      highway: "Highway Access",
+        "A nearby shopping center, doctors’ offices, and all essential facilities for daily needs ensure a high level of convenience for residents looking for stable, long-term accommodation in Karlsruhe. ",
+      highway: "Motorway Access",
       highwayDesc:
-        "Quick access to the highway and all major roads via the B36.",
+        "The B36 federal road offers fast connections to the motorway network and all major Karlsruhe traffic routes, an advantage for commuters and professionals working across the region. ",
       additionalInfo:
         "Leisure opportunities are also diverse. With the idyllic Rhine meadows in the west and the extensive forest areas of the Hardtwald in the east, this popular district offers outstanding recreational opportunities. The tram connects Neureut directly with Karlsruhe city center and the main train station or with the surrounding Hardt communities (Eggenstein-Leopoldshafen or Linkenheim-Hochstetten). Via the B36, you can quickly reach the highway and all major roads of Karlsruhe.",
     },
@@ -264,33 +291,33 @@ export const translations = {
       label: "Services",
       title: "The Guest is King",
       description:
-        "That's why it's very important to us to create a friendly and relaxing atmosphere. Our building is new and appealing, and every apartment features modern furniture.",
-      disclaimer: "Services are subject to conditions and availability.",
+        "With us, the guest truly comes first. Creating a friendly, calm, and relaxing living atmosphere is central to our philosophy. Our building is modern and well maintained, and all apartments feature contemporary furnishings, suitable for professionals, visiting researchers, doctoral candidates, and students. ",
+      disclaimer: "Services subject to terms and availability.",
       cleaning: "Weekly Cleaning Service",
       cleaningDesc:
-        "Once a week we offer a cleaning service for the common areas.",
+        "Common areas are professionally cleaned once per week. ",
       internet: "Free Internet",
       internetDesc:
-        "Each apartment has at least one LAN socket near the desk and free WiFi.",
-      phone: "Free Calls",
+        "Each apartment includes free Wi-Fi and at least one LAN socket near the desk, ideal for work, study, and research. ",
+      phone: "Free Phone Calls",
       phoneDesc:
-        "Telephone with your own direct dial number and free calls to German landlines.",
-      tv: "TV with Satellite",
+        "A telephone with its own direct dial number and free calls to German landlines. ",
+      tv: "TV with Satellite reception",
       tvDesc:
-        "Each apartment has a TV with satellite reception for your entertainment.",
-      safe: "In-Room Safe",
+        "Each apartment is equipped with a television and satellite reception. ",
+      safe: "Safe in the Apartment ",
       safeDesc:
-        "For your security, each apartment contains a safe for your valuables.",
+        "For added security, each apartment includes a personal safe for valuables. ",
       common: "Common Areas",
       commonDesc:
-        "Lounge with modern kitchen for all residents. Laundry room with washer and dryer.",
+        "A shared common room with a modern kitchen is available for all residents, along with a laundry room equipped with washing machine and dryer. ",
     },
     // Apartments Section
     apartments: {
       label: "Apartments",
       title: "Our Apartments",
       description:
-        "Choose from our modernly furnished apartments – all with private bathroom, furnishing and free WiFi.",
+        "Choose from our modernly furnished apartments, all featuring:",
       small: "Small Apartment (21)",
       smallDesc:
         "Apartment with two levels, work area with closets and shower room below, sleeping area above.",
@@ -342,6 +369,23 @@ export const translations = {
       img_32162845_desc: "Living area with an additional sofa bed.",
       img_32174059_alt: "Larger Apartment",
       img_32174059_desc: "Larger apartment with plenty of space.",
+    },
+    // FAQ Section
+    faq: {
+      label: "FAQ",
+      title: "Frequently Asked Questions",
+      description:
+        "Student Accommodation, WG & Long-Term Living in Karlsruhe ",
+      q1: "Is this a WG or a student dormitory? ",
+      a1: "No. Our boarding house is not a classic WG or student dormitory. We offer private, furnished apartments and WG-style rooms designed for long-term stays from six months in a quiet, well-managed environment. ",
+      q2: "Is the accommodation suitable for KIT students and researchers? ",
+      a2: "Yes. We regularly accommodate KIT students, doctoral candidates, and visiting researchers who are looking for long-term student accommodation in Karlsruhe-Neureut with reliable infrastructure, good transport connections, and a calm living atmosphere. ",
+      q3: "What is the minimum length of stay? ",
+      a3: "The minimum stay is six months, making our accommodation ideal for longer study periods, research projects, internships, and work assignments in Karlsruhe.",
+      q4: "Is this accommodation suitable for international students? ",
+      a4: "Yes. Our furnished apartments are well suited for international students and researchers who prefer a move-in-ready apartment with clear structures, modern amenities, and professional support.",
+      q5: "Is this accommodation suitable for families? ",
+      a5: "Our accommodation concept is designed primarily for single occupants and couples seeking long-term, quiet living. It is not intended as family housing."
     },
     // Map/Directions Section
     map: {

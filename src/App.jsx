@@ -8,6 +8,7 @@ import Region from "./components/Region";
 import Features from "./components/Features";
 import Apartments from "./components/Apartments";
 import Gallery from "./components/Gallery";
+import Faq from "./components/Faq";
 import Map from "./components/Map";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -35,6 +36,7 @@ function App() {
               <Features />
               <Apartments />
               <Gallery />
+              <Faq />
               <Map />
               <Contact />
             </main>
