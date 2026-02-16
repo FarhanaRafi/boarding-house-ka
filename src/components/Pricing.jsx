@@ -1,76 +1,57 @@
 import { Link, useParams } from "react-router-dom";
-
-const pricingPlans = [
-  {
-    name: "Studio",
-    price: "650",
-    period: "/Monat",
-    description: "Ideal für Einzelpersonen",
-    features: [
-      "1-2 Personen",
-      "Zwei Ebenen",
-      "Eigenes Duschbad",
-      
-      "Kostenloses WLAN",
-      "Wöchentliche Reinigung (Gemeinschaftsbereiche)",
-      "Alle Nebenkosten inklusive",
-    ],
-    popular: false,
-  },
-  {
-    name: "Comfort",
-    price: "850",
-    period: "/Monat",
-    description: "Perfekt für Paare",
-    features: [
-      "2 Personen",
-      "Größere Wohnfläche",
-      "Duschbad + separates WC",
-      "Premium Möblierung",
-      "Kostenloses WLAN",
-      "Wöchentliche Reinigung (Gemeinschaftsbereiche)",
-      "Alle Nebenkosten inklusive",
-    ],
-    popular: true,
-  },
-  {
-    name: "Family",
-    price: "1000",
-    period: "/Monat",
-    description: "Für Familien & Teams",
-    features: [
-      "2-4 Personen",
-      "Maximale Wohnfläche",
-      "Duschbad + separates WC",
-      "Zusätzliche Schlafcouch",
-      "Kostenloses WLAN",
-      "Wöchentliche Reinigung (Gemeinschaftsbereiche)",
-      "Alle Nebenkosten inklusive",
-    ],
-    popular: false,
-  },
-];
+import { useLanguage } from "../i18n";
 
 export default function Pricing() {
   const { lang } = useParams();
   const langPrefix = lang === "en" ? "en" : "de";
+  const { t } = useLanguage();
+
+  const pricingPlans = [
+    {
+      key: "studio",
+      name: t.pricingPage.plans.studio.name,
+      price: "650",
+      period: t.pricingPage.period,
+      description: t.pricingPage.plans.studio.description,
+      features: t.pricingPage.plans.studio.features,
+      popular: false,
+    },
+    {
+      key: "comfort",
+      name: t.pricingPage.plans.comfort.name,
+      price: "850",
+      period: t.pricingPage.period,
+      description: t.pricingPage.plans.comfort.description,
+      features: t.pricingPage.plans.comfort.features,
+      popular: true,
+    },
+    {
+      key: "family",
+      name: t.pricingPage.plans.family.name,
+      price: "1000",
+      period: t.pricingPage.period,
+      description: t.pricingPage.plans.family.description,
+      features: t.pricingPage.plans.family.features,
+      popular: false,
+    },
+  ];
+
   return (
     <section id="preise" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Transparente Preise
+            {t.pricingPage.title}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Wir brauchen Vergleiche nicht zu fürchten! Alle Preise verstehen
-            sich inklusive Nebenkosten bei mindestens 6 Monaten Aufenthalt.
+            {t.pricingPage.description}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {pricingPlans.map((plan, index) => (
+          {pricingPlans.map((plan) => (
             <div
-              key={index}
+              key={plan.key}
               className={`relative bg-white rounded-2xl p-8 shadow-lg ${
                 plan.popular ? "ring-2 ring-orange-500 scale-105" : ""
               }`}
@@ -78,7 +59,7 @@ export default function Pricing() {
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <span className="bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                    Beliebt
+                    {t.pricingPage.popularBadge}
                   </span>
                 </div>
               )}
@@ -122,14 +103,14 @@ export default function Pricing() {
                     : "bg-gray-100 hover:bg-gray-200 text-gray-900"
                 }`}
               >
-                Jetzt anfragen
+                {t.pricingPage.cta}
               </Link>
             </div>
           ))}
         </div>
 
         <p className="text-center text-gray-600 mt-8">
-          Kürzere Aufenthaltsdauern auf Anfrage möglich.
+          {t.pricingPage.note}
         </p>
       </div>
     </section>

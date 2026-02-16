@@ -98,6 +98,57 @@ export const translations = {
       commonDesc:
         "Ein gemeinsamer Aufenthaltsraum mit moderner Küche steht allen Bewohnern zur Verfügung, ebenso ein Waschraum mit Waschmaschine und Trockner.",
     },
+
+    // Pricing Page
+    pricingPage: {
+      title: "Transparente Preise",
+      description:
+        "Wir brauchen Vergleiche nicht zu fürchten! Alle Preise verstehen sich inklusive Nebenkosten bei mindestens 6 Monaten Aufenthalt.",
+      popularBadge: "Beliebt",
+      cta: "Jetzt anfragen",
+      note: "Kürzere Aufenthaltsdauern auf Anfrage möglich.",
+      period: "/Monat",
+      plans: {
+        studio: {
+          name: "Studio",
+          description: "Ideal für Einzelpersonen",
+          features: [
+            "1-2 Personen",
+            "Zwei Ebenen",
+            "Eigenes Duschbad",
+            "Kostenloses WLAN",
+            "Wöchentliche Reinigung (Gemeinschaftsbereiche)",
+            "Alle Nebenkosten inklusive",
+          ],
+        },
+        comfort: {
+          name: "Comfort",
+          description: "Perfekt für Paare",
+          features: [
+            "2 Personen",
+            "Größere Wohnfläche",
+            "Duschbad + separates WC",
+            "Premium Möblierung",
+            "Kostenloses WLAN",
+            "Wöchentliche Reinigung (Gemeinschaftsbereiche)",
+            "Alle Nebenkosten inklusive",
+          ],
+        },
+        family: {
+          name: "Family",
+          description: "Für Familien & Teams",
+          features: [
+            "2-4 Personen",
+            "Maximale Wohnfläche",
+            "Duschbad + separates WC",
+            "Zusätzliche Schlafcouch",
+            "Kostenloses WLAN",
+            "Wöchentliche Reinigung (Gemeinschaftsbereiche)",
+            "Alle Nebenkosten inklusive",
+          ],
+        },
+      },
+    },
     
     // Apartments Section
     apartments: {
@@ -335,6 +386,57 @@ export const translations = {
       wifi: "WiFi",
       twoLevels: "Two Levels",
       sleepCouch: "Sofa Bed",
+    },
+
+    // Pricing Page
+    pricingPage: {
+      title: "Transparent Pricing",
+      description:
+        "Clear and fair pricing. All prices include utilities with a minimum stay of 6 months.",
+      popularBadge: "Popular",
+      cta: "Inquire now",
+      note: "Shorter stays possible on request.",
+      period: "/month",
+      plans: {
+        studio: {
+          name: "Studio",
+          description: "Ideal for individuals",
+          features: [
+            "1-2 persons",
+            "Two levels",
+            "Private shower room",
+            "Free WiFi",
+            "Weekly cleaning (common areas)",
+            "All utilities included",
+          ],
+        },
+        comfort: {
+          name: "Comfort",
+          description: "Perfect for couples",
+          features: [
+            "2 persons",
+            "Larger living area",
+            "Shower + separate WC",
+            "Premium furnishing",
+            "Free WiFi",
+            "Weekly cleaning (common areas)",
+            "All utilities included",
+          ],
+        },
+        family: {
+          name: "Family",
+          description: "For families & teams",
+          features: [
+            "2-4 persons",
+            "Maximum living area",
+            "Shower + separate WC",
+            "Additional sofa bed",
+            "Free WiFi",
+            "Weekly cleaning (common areas)",
+            "All utilities included",
+          ],
+        },
+      },
     },
     // Gallery Section
     gallery: {
