@@ -51,7 +51,10 @@ function LangApp() {
             />
             <Route path="/ueber-uns" element={<About />} />
             <Route path="/region" element={<Region />} />
-            <Route path="/service" element={<Features />} />
+            <Route
+              path="/service"
+              element={<Features hiddenKeys={["phone", "tv"]} />}
+            />
             <Route path="/preise" element={<Pricing />} />
             <Route path="/bilder" element={<Gallery />} />
             <Route path="/anreise" element={<Map />} />

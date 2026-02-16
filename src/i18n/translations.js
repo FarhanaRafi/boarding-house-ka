@@ -320,10 +320,10 @@ export const translations = {
       title: "Our Apartments",
       description:
         "Choose from our modernly furnished apartments, all featuring:",
-      small: "Small Apartment (21)",
+      small: "Small Apartment (Type-21)",
       smallDesc:
         "Apartment with two levels, work area with closets and shower room below, sleeping area above.",
-      large: "Large Apartment (25)",
+      large: "Large Apartment (Type-25)",
       largeDesc:
         "Larger apartment with two levels and a shower room, as well as a separate WC.",
       inquire: "Inquire",

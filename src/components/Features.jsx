@@ -94,37 +94,51 @@ const icons = {
   ),
 };
 
-export default function Features({ id }) {
+export default function Features({ id, hiddenKeys = [] }) {
   const { t } = useLanguage();
 
   const features = [
     {
+      key: "cleaning",
       icon: icons.cleaning,
       title: t.features.cleaning,
       description: t.features.cleaningDesc,
     },
     {
+      key: "internet",
       icon: icons.internet,
       title: t.features.internet,
       description: t.features.internetDesc,
     },
     {
+      key: "phone",
       icon: icons.phone,
       title: t.features.phone,
       description: t.features.phoneDesc,
     },
-    { icon: icons.tv, title: t.features.tv, description: t.features.tvDesc },
     {
+      key: "tv",
+      icon: icons.tv,
+      title: t.features.tv,
+      description: t.features.tvDesc,
+    },
+    {
+      key: "safe",
       icon: icons.safe,
       title: t.features.safe,
       description: t.features.safeDesc,
     },
     {
+      key: "common",
       icon: icons.common,
       title: t.features.common,
       description: t.features.commonDesc,
     },
   ];
+
+  const visibleFeatures = features.filter(
+    (feature) => !hiddenKeys.includes(feature.key)
+  );
 
   return (
     <section
@@ -142,9 +156,9 @@ export default function Features({ id }) {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
-          {features.map((feature, index) => (
+          {visibleFeatures.map((feature) => (
             <div
-              key={index}
+              key={feature.key}
               className="group bg-white rounded-xl md:rounded-2xl p-5 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full"
             >
               <div className="w-12 h-12 md:w-16 md:h-16 bg-orange-100 rounded-lg md:rounded-xl flex items-center justify-center text-orange-500 mb-4 md:mb-6 transition-all duration-300 group-hover:bg-orange-500 group-hover:text-white group-hover:scale-110">
