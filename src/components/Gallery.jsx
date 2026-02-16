@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLanguage } from "../i18n";
 
 const getImageData = (t) => [
@@ -89,14 +89,19 @@ export default function Gallery({ id }) {
   const allImages = getImageData(t);
   const gridImages = allImages.filter((img) => img.showInGrid);
 
+  useEffect(() => {
+    document.body.style.overflow = selectedImage ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [selectedImage]);
+
   const openLightbox = (image) => {
     setSelectedImage(image);
-    document.body.style.overflow = "hidden";
   };
 
   const closeLightbox = () => {
     setSelectedImage(null);
-    document.body.style.overflow = "auto";
   };
 
   const navigateImage = (direction) => {

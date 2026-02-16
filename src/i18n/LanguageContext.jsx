@@ -3,12 +3,16 @@ import { translations } from "./translations";
 
 const LanguageContext = createContext();
 
-export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState(() => {
-    // Try to get saved language from localStorage
+export function LanguageProvider({ children, forcedLanguage }) {
+  const [storedLanguage, setStoredLanguage] = useState(() => {
     const saved = localStorage.getItem("language");
     return saved || "de";
   });
+
+  const language =
+    forcedLanguage === "de" || forcedLanguage === "en"
+      ? forcedLanguage
+      : storedLanguage;
 
   useEffect(() => {
     // Save language preference to localStorage
@@ -17,14 +21,20 @@ export function LanguageProvider({ children }) {
     document.documentElement.lang = language;
   }, [language]);
 
-  const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "de" ? "en" : "de"));
+  const setLanguage = (nextLanguage) => {
+    setStoredLanguage(nextLanguage);
   };
 
-  const t = translations[language];
+  const toggleLanguage = () => {
+    setStoredLanguage((prev) => (prev === "de" ? "en" : "de"));
+  };
+
+  const t = translations[language] || translations.de;
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, toggleLanguage, t }}>
+    <LanguageContext.Provider
+      value={{ language, setLanguage, toggleLanguage, t }}
+    >
       {children}
     </LanguageContext.Provider>
   );

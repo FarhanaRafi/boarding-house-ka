@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useParams, useNavigate } from "react-router-dom";
 import { LanguageProvider } from "../i18n";
 
 import Header from "./Header";
@@ -16,14 +15,27 @@ import Map from "./Map";
 import Apartments from "./Apartments";
 import Pricing from "./Pricing";
 import ScrollToTop from "./ScrollToTop";
+import Seo from "./Seo";
 
-function App() {
-  const [showImpressum, setShowImpressum] = useState(false);
-  const [showDatenschutz, setShowDatenschutz] = useState(false);
+function LegalOverlayRoute(props) {
+  const navigate = useNavigate();
+  const OverlayComponent = props.Component;
+  return <OverlayComponent onClose={() => navigate(-1)} />;
+}
+
+function LangApp() {
+  const { lang } = useParams();
+  const language = lang === "en" ? "en" : "de";
+
+  // Redirect unknown language prefixes to /de for canonical, SEO-friendly URLs.
+  if (lang !== "de" && lang !== "en") {
+    return <Navigate to="/de" replace />;
+  }
 
   return (
-    <LanguageProvider>
+    <LanguageProvider forcedLanguage={language}>
       <ScrollToTop />
+      <Seo />
       <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
         <Header />
         <main className="flex-grow">
@@ -40,24 +52,36 @@ function App() {
             <Route path="/ueber-uns" element={<About />} />
             <Route path="/region" element={<Region />} />
             <Route path="/service" element={<Features />} />
+            <Route path="/preise" element={<Pricing />} />
             <Route path="/bilder" element={<Gallery />} />
             <Route path="/anreise" element={<Map />} />
             <Route path="/kontakt" element={<Contact />} />
+
+            <Route
+              path="/impressum"
+              element={<LegalOverlayRoute Component={Impressum} />}
+            />
+            <Route
+              path="/datenschutz"
+              element={<LegalOverlayRoute Component={Datenschutz} />}
+            />
+
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
-        <Footer
-          onImpressumClick={() => setShowImpressum(true)}
-          onDatenschutzClick={() => setShowDatenschutz(true)}
-        />
+        <Footer />
       </div>
-
-      {showImpressum && <Impressum onClose={() => setShowImpressum(false)} />}
-
-      {showDatenschutz && (
-        <Datenschutz onClose={() => setShowDatenschutz(false)} />
-      )}
     </LanguageProvider>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Navigate to="/de" replace />} />
+      <Route path="/:lang/*" element={<LangApp />} />
+      <Route path="*" element={<Navigate to="/de" replace />} />
+    </Routes>
   );
 }
 

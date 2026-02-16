@@ -1,9 +1,11 @@
 import { useLanguage } from "../i18n";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function Hero({ id }) {
   const { t } = useLanguage();
+  const { lang } = useParams();
+  const langPrefix = lang === "en" ? "en" : "de";
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -21,7 +23,7 @@ export default function Hero({ id }) {
       <div className="absolute inset-0 z-0">
         <img
           src="/images/32162656.JPG"
-          alt="Boardinghouse Karlsruhe - livein-wg.de"
+          alt="Boardinghouse Karlsruhe - boardinghauskarlsruhe.de"
           className={`w-full h-full object-cover transition-transform duration-[2000ms] ${
             isLoaded ? "scale-100" : "scale-110"
           }`}
@@ -74,7 +76,7 @@ export default function Hero({ id }) {
             style={{ transitionDelay: "900ms" }}
           >
             <Link
-              to="/bilder"
+              to={`/${langPrefix}/bilder`}
               className="group inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-orange-500/25"
             >
               {t.hero.cta1}
@@ -93,7 +95,7 @@ export default function Hero({ id }) {
               </svg>
             </Link>
             <Link
-              to="/kontakt"
+              to={`/${langPrefix}/kontakt`}
               className="inline-flex items-center justify-center border-2 border-white/30 text-white hover:bg-white hover:text-gray-900 px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 backdrop-blur-sm hover:border-white"
             >
               {t.hero.cta2}
@@ -105,7 +107,7 @@ export default function Hero({ id }) {
       {/* Animated scroll indicator - hidden on small screens */}
       <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 hidden sm:block">
         <Link
-          to="/ueber-uns"
+          to={`/${langPrefix}/ueber-uns`}
           className="flex flex-col items-center gap-2 group cursor-pointer"
         >
           <span className="text-white/60 text-sm group-hover:text-white/80 transition-colors duration-300">

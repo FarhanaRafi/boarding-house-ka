@@ -92,7 +92,7 @@ export default function Map({ id }) {
           <div className="lg:col-span-2">
             <div className="rounded-xl md:rounded-2xl overflow-hidden shadow-lg h-[300px] sm:h-[350px] md:h-[400px] lg:h-full lg:min-h-[400px]">
               <iframe
-                title="Boardinghouse Karlsruhe - livein-wg.de"
+                title="Boardinghouse Karlsruhe - boardinghauskarlsruhe.de"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2616.467825368366!2d8.38459427685955!3d49.02073997135439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797089457635c03%3A0x6758604771485671!2sPfarrer-Graebener-Stra%C3%9Fe%201A%2C%2076149%20Karlsruhe!5e0!3m2!1sen!2sde!4v1709400000000!5m2!1sen!2sde"
                 width="100%"
                 height="100%"

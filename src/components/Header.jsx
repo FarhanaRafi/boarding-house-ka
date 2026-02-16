@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useLanguage } from "../i18n";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { language, toggleLanguage, t } = useLanguage();
+  const { language, t } = useLanguage();
   const location = useLocation();
+  const navigate = useNavigate();
+  const { lang } = useParams();
+  const langPrefix = lang === "en" ? "en" : "de";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,18 +27,34 @@ export default function Header() {
     }
   }, [isMenuOpen]);
 
-  const showScrolledStyle =
-    isScrolled || location.pathname !== "/" || isMenuOpen;
+  const isHome =
+    location.pathname === `/${langPrefix}` ||
+    location.pathname === `/${langPrefix}/`;
+  const showScrolledStyle = isScrolled || !isHome || isMenuOpen;
 
   const navLinks = [
-    { name: t.nav.home, to: "/" },
-    { name: t.nav.about, to: "/ueber-uns" },
-    { name: t.nav.region, to: "/region" },
-    { name: t.nav.service, to: "/service" },
-    { name: t.nav.gallery, to: "/bilder" },
-    { name: t.nav.directions, to: "/anreise" },
-    { name: t.nav.contact, to: "/kontakt" },
+    { name: t.nav.home, to: `/${langPrefix}` },
+    { name: t.nav.about, to: `/${langPrefix}/ueber-uns` },
+    { name: t.nav.region, to: `/${langPrefix}/region` },
+    { name: t.nav.service, to: `/${langPrefix}/service` },
+    { name: t.nav.pricing, to: `/${langPrefix}/preise` },
+    { name: t.nav.gallery, to: `/${langPrefix}/bilder` },
+    { name: t.nav.directions, to: `/${langPrefix}/anreise` },
+    { name: t.nav.contact, to: `/${langPrefix}/kontakt` },
   ];
+
+  const switchLanguage = () => {
+    const newLang = language === "de" ? "en" : "de";
+    const newPrefix = newLang === "en" ? "en" : "de";
+    const current = location.pathname;
+
+    const remainder = current.startsWith(`/${langPrefix}`)
+      ? current.slice(`/${langPrefix}`.length)
+      : current;
+    const rawNextPath = `/${newPrefix}${remainder || ""}`;
+    const nextPath = rawNextPath === `/${newPrefix}/` ? `/${newPrefix}` : rawNextPath;
+    navigate(nextPath);
+  };
 
   return (
     <header
@@ -49,7 +68,7 @@ export default function Header() {
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* --- LOGO START --- */}
           {/* Reduced gap from gap-3 to gap-1.5 (mobile) and gap-2 (desktop) */}
-          <Link to="/" className="flex items-center gap-1.5 md:gap-2 group">
+          <Link to={`/${langPrefix}`} className="flex items-center gap-1.5 md:gap-2 group">
             {/* 1. Icon */}
             <div
               className={`transition-all duration-500 transform group-hover:rotate-3 ${
@@ -128,7 +147,7 @@ export default function Header() {
 
             {/* Language Toggle */}
             <button
-              onClick={toggleLanguage}
+              onClick={switchLanguage}
               className={`flex items-center gap-2 text-xs font-bold transition-colors duration-300 ${
                 showScrolledStyle
                   ? "text-gray-500 hover:text-orange-500"
@@ -156,7 +175,7 @@ export default function Header() {
             </button>
 
             <Link
-              to="/kontakt"
+              to={`/${langPrefix}/kontakt`}
               className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:-translate-y-0.5"
             >
               {t.nav.inquire}
@@ -236,7 +255,7 @@ export default function Header() {
 
             {/* Mobile Language */}
             <button
-              onClick={toggleLanguage}
+              onClick={switchLanguage}
               className="flex items-center gap-8 text-xl"
             >
               <span
@@ -260,7 +279,7 @@ export default function Header() {
             </button>
 
             <Link
-              to="/kontakt"
+              to={`/${langPrefix}/kontakt`}
               className="mt-6 w-full max-w-xs bg-orange-500 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-center shadow-xl shadow-orange-500/20 active:scale-95 transition-transform"
               onClick={() => setIsMenuOpen(false)}
             >
@@ -268,6 +287,7 @@ export default function Header() {
             </Link>
           </div>
         </div>
+
       </div>
     </header>
   );

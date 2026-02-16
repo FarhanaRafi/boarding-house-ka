@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const pricingPlans = [
   {
@@ -10,10 +10,9 @@ const pricingPlans = [
       "1-2 Personen",
       "Zwei Ebenen",
       "Eigenes Duschbad",
-      "Möbliert inkl. TV & SAT",
+      
       "Kostenloses WLAN",
-      "Gratis Festnetztelefon",
-      "Wöchentliche Reinigung",
+      "Wöchentliche Reinigung (Gemeinschaftsbereiche)",
       "Alle Nebenkosten inklusive",
     ],
     popular: false,
@@ -29,8 +28,7 @@ const pricingPlans = [
       "Duschbad + separates WC",
       "Premium Möblierung",
       "Kostenloses WLAN",
-      "Gratis Festnetztelefon",
-      "Wöchentliche Reinigung",
+      "Wöchentliche Reinigung (Gemeinschaftsbereiche)",
       "Alle Nebenkosten inklusive",
     ],
     popular: true,
@@ -46,8 +44,7 @@ const pricingPlans = [
       "Duschbad + separates WC",
       "Zusätzliche Schlafcouch",
       "Kostenloses WLAN",
-      "Gratis Festnetztelefon",
-      "Wöchentliche Reinigung",
+      "Wöchentliche Reinigung (Gemeinschaftsbereiche)",
       "Alle Nebenkosten inklusive",
     ],
     popular: false,
@@ -55,6 +52,8 @@ const pricingPlans = [
 ];
 
 export default function Pricing() {
+  const { lang } = useParams();
+  const langPrefix = lang === "en" ? "en" : "de";
   return (
     <section id="preise" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -116,7 +115,7 @@ export default function Pricing() {
                 ))}
               </ul>
               <Link
-                to="/kontakt"
+                to={`/${langPrefix}/kontakt`}
                 className={`block w-full text-center py-4 rounded-xl font-semibold transition-colors ${
                   plan.popular
                     ? "bg-orange-500 hover:bg-orange-600 text-white"

@@ -15,7 +15,7 @@ export default function About({ id }) {
             <div className="relative rounded-xl md:rounded-2xl overflow-hidden shadow-xl md:shadow-2xl">
               <img
                 src="/images/32173466.JPG"
-                alt="livein-wg.de"
+                alt="boardinghauskarlsruhe.de"
                 className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>

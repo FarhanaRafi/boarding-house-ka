@@ -1,8 +1,10 @@
 import { useLanguage } from "../i18n";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function Apartments() {
   const { t } = useLanguage();
+  const { lang } = useParams();
+  const langPrefix = lang === "en" ? "en" : "de";
 
   const apartments = [
     {
@@ -49,7 +51,7 @@ export default function Apartments() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
-          {apartments.map((apartment, index) => (
+          {apartments.map((apartment) => (
             <div key={apartment.id}>
               <div className="group bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col">
                 <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden flex-shrink-0">
@@ -77,7 +79,7 @@ export default function Apartments() {
                     ))}
                   </div>
                   <Link
-                    to="/kontakt"
+                    to={`/${langPrefix}/kontakt`}
                     className="block w-full text-center bg-gray-900 hover:bg-orange-500 text-white py-2.5 md:py-3 rounded-lg md:rounded-xl font-semibold transition-colors text-sm md:text-base mt-auto"
                   >
                     {t.apartments.inquire}
