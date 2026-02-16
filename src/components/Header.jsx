@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useLanguage } from "../i18n";
 
-export default function Header() {
+export default function Header({ forceScrolled = false }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { language, t } = useLanguage();
@@ -20,17 +20,17 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
+    return () => {
       document.body.style.overflow = "auto";
-    }
+    };
   }, [isMenuOpen]);
 
   const isHome =
     location.pathname === `/${langPrefix}` ||
     location.pathname === `/${langPrefix}/`;
-  const showScrolledStyle = isScrolled || !isHome || isMenuOpen;
+  const showScrolledStyle =
+    isScrolled || forceScrolled || !isHome || isMenuOpen;
 
   const navLinks = [
     { name: t.nav.home, to: `/${langPrefix}` },
@@ -52,7 +52,8 @@ export default function Header() {
       ? current.slice(`/${langPrefix}`.length)
       : current;
     const rawNextPath = `/${newPrefix}${remainder || ""}`;
-    const nextPath = rawNextPath === `/${newPrefix}/` ? `/${newPrefix}` : rawNextPath;
+    const nextPath =
+      rawNextPath === `/${newPrefix}/` ? `/${newPrefix}` : rawNextPath;
     navigate(nextPath);
   };
 
@@ -67,8 +68,10 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* --- LOGO START --- */}
-          {/* Reduced gap from gap-3 to gap-1.5 (mobile) and gap-2 (desktop) */}
-          <Link to={`/${langPrefix}`} className="flex items-center gap-1.5 md:gap-2 group">
+          <Link
+            to={`/${langPrefix}`}
+            className="flex items-center gap-1.5 md:gap-2 group"
+          >
             {/* 1. Icon */}
             <div
               className={`transition-all duration-500 transform group-hover:rotate-3 ${
@@ -81,13 +84,15 @@ export default function Header() {
                 fill="currentColor"
               >
                 <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm0 2.84L18 11v8h-2v-6H8v6H6v-8l6-5.16z" />
-                <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z" opacity="0.3" />
+                <path
+                  d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"
+                  opacity="0.3"
+                />
               </svg>
             </div>
 
             {/* 2. Text Stack */}
             <div className="flex flex-col justify-center">
-              {/* Top Line */}
               <h1
                 className={`text-sm md:text-base font-black uppercase tracking-widest leading-none transition-colors duration-300 ${
                   showScrolledStyle ? "text-gray-800" : "text-white/95"
@@ -96,7 +101,6 @@ export default function Header() {
                 Boarding House
               </h1>
 
-              {/* Bottom Line */}
               <div className="flex items-baseline gap-2 mt-1">
                 <span
                   className={`text-[11px] font-medium italic font-serif ${
@@ -125,8 +129,8 @@ export default function Header() {
                     isActive
                       ? "text-orange-500"
                       : showScrolledStyle
-                      ? "text-gray-600"
-                      : "text-white/90 hover:text-white"
+                        ? "text-gray-600"
+                        : "text-white/90 hover:text-white"
                   }`}
                 >
                   {link.name}
@@ -199,7 +203,9 @@ export default function Header() {
                     ? "text-gray-900"
                     : "text-white"
                 } ${
-                  isMenuOpen ? "rotate-45 translate-y-0.5" : "group-hover:w-3/4"
+                  isMenuOpen
+                    ? "rotate-45 translate-y-0.5"
+                    : "group-hover:w-3/4"
                 }`}
               />
               <span
@@ -287,7 +293,6 @@ export default function Header() {
             </Link>
           </div>
         </div>
-
       </div>
     </header>
   );
