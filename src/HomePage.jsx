@@ -13,7 +13,7 @@ export default function HomePage() {
       <Hero id="home" />
       <About id="ueber-uns" />
       <Region id="region" />
-      <Features id="service" />
+      <Features id="service" hiddenKeys={["phone", "tv"]} />
       <Apartments />
       <Gallery id="bilder" />
       <Map id="anreise" />
