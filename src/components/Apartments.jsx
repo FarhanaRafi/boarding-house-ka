@@ -55,11 +55,23 @@ export default function Apartments() {
             <div key={apartment.id}>
               <div className="group bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col">
                 <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden flex-shrink-0">
-                  <img
-                    src={apartment.image}
-                    alt={apartment.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
+                  <picture>
+                    <source
+                      srcSet={apartment.image.replace(/\.JPG$/i, ".avif")}
+                      type="image/avif"
+                    />
+                    <source
+                      srcSet={apartment.image.replace(/\.JPG$/i, ".webp")}
+                      type="image/webp"
+                    />
+                    <img
+                      src={apartment.image}
+                      alt={apartment.name}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </picture>
                 </div>
                 <div className="p-4 md:p-6 flex flex-col flex-grow">
                   <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 md:mb-3">

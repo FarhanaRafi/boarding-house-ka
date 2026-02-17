@@ -89,6 +89,9 @@ export default function Gallery({ id }) {
   const allImages = getImageData(t);
   const gridImages = allImages.filter((img) => img.showInGrid);
 
+  const asAvif = (src) => src.replace(/\.JPG$/i, ".avif");
+  const asWebp = (src) => src.replace(/\.JPG$/i, ".webp");
+
   useEffect(() => {
     document.body.style.overflow = selectedImage ? "hidden" : "auto";
     return () => {
@@ -139,11 +142,17 @@ export default function Gallery({ id }) {
               onClick={() => openLightbox(image)}
               className="relative aspect-[4/3] overflow-hidden rounded-xl md:rounded-2xl group cursor-pointer"
             >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
+              <picture>
+                <source srcSet={asAvif(image.src)} type="image/avif" />
+                <source srcSet={asWebp(image.src)} type="image/webp" />
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </picture>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3 md:p-4">
                 <span className="text-white font-medium text-xs sm:text-sm md:text-base line-clamp-2">
                   {image.alt}
@@ -246,11 +255,16 @@ export default function Gallery({ id }) {
             className="max-w-5xl w-full max-h-[90vh] flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
-              src={selectedImage.src}
-              alt={selectedImage.alt}
-              className="w-full max-h-[70vh] object-contain rounded-lg"
-            />
+            <picture>
+              <source srcSet={asAvif(selectedImage.src)} type="image/avif" />
+              <source srcSet={asWebp(selectedImage.src)} type="image/webp" />
+              <img
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                decoding="async"
+                className="w-full max-h-[70vh] object-contain rounded-lg"
+              />
+            </picture>
             <div className="mt-4 text-center px-4">
               <h3 className="text-white text-lg md:text-xl font-semibold mb-2">
                 {selectedImage.alt}

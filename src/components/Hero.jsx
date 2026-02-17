@@ -21,13 +21,20 @@ export default function Hero({ id }) {
     >
       {/* Background Image with existing photo */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/images/32162656.JPG"
-          alt="Boardinghouse Karlsruhe - boardinghauskarlsruhe.de"
-          className={`w-full h-full object-cover transition-transform duration-[2000ms] ${
-            isLoaded ? "scale-100" : "scale-110"
-          }`}
-        />
+        <picture>
+          <source srcSet="/images/32162656.avif" type="image/avif" />
+          <source srcSet="/images/32162656.webp" type="image/webp" />
+          <img
+            src="/images/32162656.JPG"
+            alt="Boardinghouse Karlsruhe - boardinghauskarlsruhe.de"
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+            className={`w-full h-full object-cover transition-transform duration-[2000ms] ${
+              isLoaded ? "scale-100" : "scale-110"
+            }`}
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50 md:from-black/85 md:via-black/60 md:to-black/40"></div>
       </div>
 

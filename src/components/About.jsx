@@ -13,11 +13,17 @@ export default function About({ id }) {
           {/* Image */}
           <div className="relative group order-2 lg:order-1">
             <div className="relative rounded-xl md:rounded-2xl overflow-hidden shadow-xl md:shadow-2xl">
-              <img
-                src="/images/32173466.JPG"
-                alt="boardinghauskarlsruhe.de"
-                className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+              <picture>
+                <source srcSet="/images/32173466.avif" type="image/avif" />
+                <source srcSet="/images/32173466.webp" type="image/webp" />
+                <img
+                  src="/images/32173466.JPG"
+                  alt="boardinghauskarlsruhe.de"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </picture>
             </div>
           </div>
 
