@@ -39,6 +39,7 @@ export default function Header({ forceScrolled = false }) {
     { name: t.nav.service, to: `/${langPrefix}/service` },
     { name: t.nav.pricing, to: `/${langPrefix}/preise` },
     { name: t.nav.gallery, to: `/${langPrefix}/bilder` },
+    { name: t.nav.faq, to: `/${langPrefix}/faq` },
     { name: t.nav.directions, to: `/${langPrefix}/anreise` },
     { name: t.nav.contact, to: `/${langPrefix}/kontakt` },
   ];

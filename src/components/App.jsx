@@ -14,6 +14,7 @@ import Region from "./Region";
 import Map from "./Map";
 import Apartments from "./Apartments";
 import Pricing from "./Pricing";
+import Faq from "./Faq";
 import ScrollToTop from "./ScrollToTop";
 import Seo from "./Seo";
 
@@ -56,6 +57,7 @@ function LangApp() {
               element={<Features hiddenKeys={["phone", "tv"]} />}
             />
             <Route path="/preise" element={<Pricing />} />
+            <Route path="/faq" element={<Faq />} />
             <Route path="/bilder" element={<Gallery />} />
             <Route path="/anreise" element={<Map />} />
             <Route path="/kontakt" element={<Contact />} />
